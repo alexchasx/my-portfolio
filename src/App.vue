@@ -1,19 +1,16 @@
 <script>
-import AppHeader from "@/components/AppHeader.vue";
+// import HeaderComponent from '@/components/HeaderComponent.vue';
 
 export default {
   components: {
-    AppHeader,
+    // HeaderComponent,
   },
 };
 </script>
 
 <template>
-  <app-header />
+  <!-- <header-component /> -->
 
-  <div>APP</div>
+  <main><router-view /></main>
 </template>
 
-<style lang="scss">
-@import "assets/scss/main.scss";
-</style>

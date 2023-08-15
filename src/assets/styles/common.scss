@@ -1,0 +1,357 @@
+html {
+  box-sizing: border-box;
+  height: 100%;
+  overflow: hidden;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+
+  &::-webkit-scrollbar {
+    width: 0 !important;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family, sans-serif);
+  font-style: normal;
+  font-weight: 300;
+  font-size: 33px;
+  line-height: 1.2;
+  background-color: var(--color-light);
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+figure {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+sup {
+  top: 0;
+}
+
+.site-container {
+  overflow: hidden;
+}
+
+/* Parallax Star background
+----------------------------------------*/
+// n is number of stars required
+@function multiple-box-shadow($n) {
+  $value: '#{random(2000)}px #{random(2000)}px #FFF';
+  @for $i from 2 through $n {
+    $value: '#{$value} , #{random(2000)}px #{random(2000)}px #FFF';
+  }
+  @return unquote($value);
+}
+
+$shadows-small: multiple-box-shadow(700);
+$shadows-medium: multiple-box-shadow(200);
+$shadows-big: multiple-box-shadow(100);
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+#stars {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: $shadows-small;
+  animation: animStar 50s linear infinite;
+  &:after {
+    content: ' ';
+    position: absolute;
+    top: 2000px;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: $shadows-small;
+  }
+}
+
+#stars2 {
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: $shadows-medium;
+  animation: animStar 100s linear infinite;
+  &:after {
+    content: ' ';
+    position: absolute;
+    top: 2000px;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: $shadows-medium;
+  }
+}
+
+#stars3 {
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: $shadows-big;
+  animation: animStar 150s linear infinite;
+  &:after {
+    content: ' ';
+    position: absolute;
+    top: 2000px;
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: $shadows-big;
+  }
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}
+
+.gradient-text {
+  font-family: var(--font-family), sans-serif;
+  // background: -webkit-linear-gradient(white, var(--color-grey-2));
+  background: -webkit-linear-gradient(white, var(--color-ultramarine));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/*---------------------------------------*/
+
+.is-hidden {
+  display: none !important; /* stylelint-disable-line declaration-no-important */
+}
+
+.btn-reset {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn {
+  position: relative;
+  border: 1px solid rgb(146, 148, 248);
+  overflow: hidden;
+  padding: 13px 19px;
+  min-height: 50px;
+  min-width: 150px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  color: #f4f4f4;
+
+  &:focus {
+    outline: none;
+  }
+
+  &.focus-visible {
+    box-shadow: 1px 1px 25px 10px var(--color-ultramarine);
+  }
+
+  &:hover:before {
+    transform: translateX(100%);
+  }
+
+  &:active {
+    box-shadow: 1px 1px 25px 10px var(--color-ultramarine);
+  }
+}
+
+.btn:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    var(--color-ultramarine),
+    transparent
+  );
+  transition: all 0.3s;
+}
+
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.input-reset {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 0;
+  background-color: #fff;
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 var(--container-offset);
+  max-width: var(--container-width);
+}
+
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+/* The typing effect
+-----------------------------------*/
+.typewriter {
+  overflow: hidden;
+  // border-right: 0.15em solid var(--color-ultramarine);
+  white-space: nowrap;
+  // margin: 0 auto;
+  // letter-spacing: 0.15em;
+  animation: typing 2.0s steps(30, end);
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+// @keyframes blink-caret {
+//   from,
+//   to {
+//     border-color: transparent;
+//   }
+//   50% {
+//     border-color: var(--color-ultramarine);
+//   }
+// }
+/*-----------------------------------*/
+
+.form-field {
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 0;
+  padding: 15px 23px;
+  resize: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  background-color: var(--color-grey-dark);
+  color: var(--color-grey-light);
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
+
+  &:focus {
+    outline: 1px solid var(--color-yellow-light);
+  }
+
+  &:hover::placeholder {
+    color: var(--color-yellow-light);
+  }
+
+  &:active::placeholder {
+    color: var(--color-light);
+  }
+
+  &:active {
+    outline: none;
+  }
+}
+
+input.form-field {
+  height: 50px;
+}
+
+.address {
+  position: relative;
+  display: none;
+
+  &__tel {
+    padding-left: 23px;
+    font-family: var(--second-family);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    background-repeat: no-repeat;
+    background-position: 3px 1px;
+    background-size: 17px 17px;
+    color: var(--color-yellow-light);
+  }
+}
+
+.field-wrap {
+  position: relative;
+
+  .just-validate-error {
+    &-label {
+      position: absolute;
+      top: 3px;
+      left: 23px;
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 9px;
+      line-height: 11px;
+      color: var(--color-red-light) !important;
+    }
+
+    &-field {
+      outline: 1px solid var(--color-red-light);
+    }
+  }
+}
