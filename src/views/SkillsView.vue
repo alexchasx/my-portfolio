@@ -1,23 +1,11 @@
 <script>
-import { menu } from '@/constants';
-
-export default {
-  data() {
-    return {
-      menu,
-    };
-  },
-
-  computed: {
-    currentRouteName() {
-      return this.$route.name;
-    },
-  },
-};
+  export default {}
 </script>
 
 <template>
   <section class="hero">
+    <parallax-stars />
+
     <div class="hero__content">
       <h1 class="hero__title">
         <div class="hero__text gradient-text uppercase typewriter">
@@ -50,45 +38,3 @@ export default {
     </div>
   </section>
 </template>
-
-<style lang="scss">
-.hero {
-  &__content {
-    margin-top: 150px;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    background-color: transparent;
-  }
-
-  &__title {
-    margin-bottom: 42px;
-    padding-left: 10px;
-    font-weight: 300;
-    font-size: 46px;
-    letter-spacing: 5px;
-    line-height: 1.2;
-    text-align: center;
-    color: #fff;
-  }
-
-  .table {
-    margin-bottom: 42px;
-
-    &__row {
-      display: flex;
-      flex-direction: row;
-    }
-
-    &__col {
-      &--1 {
-        min-width: 180px;
-      }
-    }
-  }
-}
-</style>

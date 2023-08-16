@@ -54,95 +54,6 @@ sup {
   overflow: hidden;
 }
 
-/* Parallax Star background
-----------------------------------------*/
-// n is number of stars required
-@function multiple-box-shadow($n) {
-  $value: '#{random(2000)}px #{random(2000)}px #FFF';
-  @for $i from 2 through $n {
-    $value: '#{$value} , #{random(2000)}px #{random(2000)}px #FFF';
-  }
-  @return unquote($value);
-}
-
-$shadows-small: multiple-box-shadow(700);
-$shadows-medium: multiple-box-shadow(200);
-$shadows-big: multiple-box-shadow(100);
-
-.uppercase {
-  text-transform: uppercase;
-}
-
-#stars {
-  width: 1px;
-  height: 1px;
-  background: transparent;
-  box-shadow: $shadows-small;
-  animation: animStar 50s linear infinite;
-  &:after {
-    content: ' ';
-    position: absolute;
-    top: 2000px;
-    width: 1px;
-    height: 1px;
-    background: transparent;
-    box-shadow: $shadows-small;
-  }
-}
-
-#stars2 {
-  width: 2px;
-  height: 2px;
-  background: transparent;
-  box-shadow: $shadows-medium;
-  animation: animStar 100s linear infinite;
-  &:after {
-    content: ' ';
-    position: absolute;
-    top: 2000px;
-    width: 2px;
-    height: 2px;
-    background: transparent;
-    box-shadow: $shadows-medium;
-  }
-}
-
-#stars3 {
-  width: 3px;
-  height: 3px;
-  background: transparent;
-  box-shadow: $shadows-big;
-  animation: animStar 150s linear infinite;
-  &:after {
-    content: ' ';
-    position: absolute;
-    top: 2000px;
-    width: 3px;
-    height: 3px;
-    background: transparent;
-    box-shadow: $shadows-big;
-  }
-}
-
-@keyframes animStar {
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(-2000px);
-  }
-}
-
-.gradient-text {
-  font-family: var(--font-family), sans-serif;
-  // background: -webkit-linear-gradient(white, var(--color-grey-2));
-  background: -webkit-linear-gradient(white, var(--color-ultramarine));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/*---------------------------------------*/
-
 .is-hidden {
   display: none !important; /* stylelint-disable-line declaration-no-important */
 }
@@ -152,6 +63,10 @@ $shadows-big: multiple-box-shadow(100);
   padding: 0;
   background-color: transparent;
   cursor: pointer;
+}
+
+@mixin btn-active {
+  box-shadow: 1px 1px 25px 10px var(--color-ultramarine);
 }
 
 .btn {
@@ -182,11 +97,15 @@ $shadows-big: multiple-box-shadow(100);
   }
 
   &:active {
-    box-shadow: 1px 1px 25px 10px var(--color-ultramarine);
+    @include btn-active();
   }
 }
 
-.btn:before {
+.btn-active {
+  @include btn-active();
+}
+
+.btn::before {
   content: '';
   position: absolute;
   top: 0;
@@ -243,37 +162,6 @@ $shadows-big: multiple-box-shadow(100);
 .js-focus-visible :focus:not(.focus-visible) {
   outline: none;
 }
-
-/* The typing effect
------------------------------------*/
-.typewriter {
-  overflow: hidden;
-  // border-right: 0.15em solid var(--color-ultramarine);
-  white-space: nowrap;
-  // margin: 0 auto;
-  // letter-spacing: 0.15em;
-  animation: typing 2.0s steps(30, end);
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-// @keyframes blink-caret {
-//   from,
-//   to {
-//     border-color: transparent;
-//   }
-//   50% {
-//     border-color: var(--color-ultramarine);
-//   }
-// }
-/*-----------------------------------*/
 
 .form-field {
   outline: none;
@@ -355,3 +243,108 @@ input.form-field {
     }
   }
 }
+
+/* Parallax Star background
+----------------------------------------*/
+// n is number of stars required
+@function multiple-box-shadow($n) {
+  $value: '#{random(2000)}px #{random(2000)}px #FFF';
+  @for $i from 2 through $n {
+    $value: '#{$value} , #{random(2000)}px #{random(2000)}px #FFF';
+  }
+  @return unquote($value);
+}
+
+$shadows-small: multiple-box-shadow(700);
+$shadows-medium: multiple-box-shadow(200);
+$shadows-big: multiple-box-shadow(100);
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+@mixin stars($size, $box-shadow) {
+  width: $size;
+  height: $size;
+  background: transparent;
+  box-shadow: $box-shadow;
+  animation: animStar 100s linear infinite;
+  &:after {
+    content: ' ';
+    position: absolute;
+    top: -2000px;
+    width: $size;
+    height: $size;
+    background: transparent;
+    box-shadow: $box-shadow;
+  }
+}
+
+.stars-small {
+  @include stars(1px, $shadows-small);
+}
+
+.stars-medium {
+  @include stars(2px, $shadows-medium);
+}
+
+.stars-big {
+  @include stars(3px, $shadows-big);
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(2000px);
+  }
+}
+
+.gradient-text {
+  font-family: var(--font-family), sans-serif;
+  // background: -webkit-linear-gradient(white, var(--color-grey-2));
+  background: -webkit-linear-gradient(white, var(--color-ultramarine));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stars-toggle-btn {
+  position: absolute;
+  z-index: 100;
+  right: 1em;
+  bottom: 1em;
+}
+
+/*---------------------------------------*/
+
+/* The typing effect
+-----------------------------------*/
+.typewriter {
+  overflow: hidden;
+  // border-right: 0.15em solid var(--color-ultramarine);
+  white-space: nowrap;
+  // margin: 0 auto;
+  // letter-spacing: 0.15em;
+  animation: typing 2s steps(30, end);
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+// @keyframes blink-caret {
+//   from,
+//   to {
+//     border-color: transparent;
+//   }
+//   50% {
+//     border-color: var(--color-ultramarine);
+//   }
+// }
+/*-----------------------------------*/

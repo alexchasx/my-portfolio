@@ -1,5 +1,24 @@
+<script>
+import { mapGetters, mapActions } from 'vuex';
+export default {
+  computed: {
+    ...mapGetters(['getVisibleStars']),
+  },
+
+  methods: {
+    ...mapActions(['toggleStars']),
+  },
+};
+</script>
+
 <template>
-  <div id="stars"></div>
-  <div id="stars2"></div>
-  <div id="stars3"></div>
+  <template v-if="getVisibleStars">
+    <div class="stars-small"></div>
+    <div class="stars-medium"></div>
+    <div class="stars-big"></div>
+  </template>
+
+  <button class="btn-reset btn stars-toggle-btn" @click="toggleStars">
+    Disable Stars
+  </button>
 </template>
