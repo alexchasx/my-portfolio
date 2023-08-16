@@ -1,5 +1,6 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
+
 export default {
   computed: {
     ...mapGetters(['getVisibleStars']),
@@ -22,3 +23,7 @@ export default {
     Disable Stars
   </button>
 </template>
+
+<style lang="scss" scoped>
+@import '@/assets/styles/components/parallax-stars.scss';
+</style>

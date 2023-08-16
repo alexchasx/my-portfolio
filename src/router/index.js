@@ -1,47 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomeView from '@/views/HomeView.vue';
-import SkillsView from '@/views/SkillsView.vue';
-import { menu } from '@/constants';
+import store from '../store';
+import { capitalizeFirstLetter } from '@/helpers';
+
+const menuRoutes = store.getters.getMenu.map((item) => {
+  return {
+    path: '/' + item.route,
+    name: item.route,
+    component: import('@/views/' + capitalizeFirstLetter(item.route) + 'View'),
+  };
+});
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      name: menu.home.route,
-      component: HomeView,
-    },
-    {
-      path: '/' + menu.skills.route,
-      name: menu.skills.route,
-      component: SkillsView,
-    },
-    // {
-    //   path: '/' + menu.experience.route,
-    //   name: menu.experience.route,
-    //   component: HomeView,
-    // },
-    // {
-    //   path: '/' + menu.education.route,
-    //   name: menu.education.route,
-    //   component: HomeView,
-    // },
-    {
-      path: '/' + menu.portfolio.route,
-      name: menu.portfolio.route,
-      component: HomeView,
-    },
-    {
-      path: '/' + menu.contacts.route,
-      name: menu.contacts.route,
-      component: HomeView,
-    },
-    // {
-    //   path: '/' + menu.pdf.route,
-    //   name: menu.pdf.route,
-    //   component: HomeView,
-    // },
-  ],
+  routes: [...menuRoutes],
 });
 
 export default router;

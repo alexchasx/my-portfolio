@@ -1,13 +1,5 @@
 <script>
-import { menu } from '@/constants';
-
 export default {
-  data() {
-    return {
-      menu,
-    };
-  },
-
   computed: {
     currentRouteName() {
       return this.$route.name;

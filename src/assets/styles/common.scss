@@ -17,6 +17,7 @@ html {
 
 body {
   margin: 0;
+  min-width: 320px;
   font-family: var(--font-family, sans-serif);
   font-style: normal;
   font-weight: 300;
@@ -50,14 +51,26 @@ sup {
   top: 0;
 }
 
-.site-container {
-  overflow: hidden;
+.container {
+  margin: 0 auto;
+  padding: 0 var(--container-offset);
+  max-width: var(--container-width);
 }
 
-.is-hidden {
-  display: none !important; /* stylelint-disable-line declaration-no-important */
+// .site-container {
+//   overflow: hidden;
+// }
+
+// .is-hidden {
+//   display: none !important; /* stylelint-disable-line declaration-no-important */
+// }
+
+.uppercase {
+  text-transform: uppercase;
 }
 
+/* BUTTONS
+------------------------------------*/
 .btn-reset {
   border: none;
   padding: 0;
@@ -67,6 +80,10 @@ sup {
 
 @mixin btn-active {
   box-shadow: 1px 1px 25px 10px var(--color-ultramarine);
+}
+
+.btn-active {
+  @include btn-active();
 }
 
 .btn {
@@ -101,10 +118,6 @@ sup {
   }
 }
 
-.btn-active {
-  @include btn-active();
-}
-
 .btn::before {
   content: '';
   position: absolute;
@@ -120,26 +133,12 @@ sup {
   );
   transition: all 0.3s;
 }
+/*------------------------------------*/
 
 .list-reset {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-.input-reset {
-  -webkit-appearance: none;
-  appearance: none;
-  border: none;
-  border-radius: 0;
-  background-color: #fff;
-
-  &::-webkit-search-decoration,
-  &::-webkit-search-cancel-button,
-  &::-webkit-search-results-button,
-  &::-webkit-search-results-decoration {
-    display: none;
-  }
 }
 
 .visually-hidden {
@@ -153,14 +152,43 @@ sup {
   clip: rect(0 0 0 0);
 }
 
-.container {
-  margin: 0 auto;
-  padding: 0 var(--container-offset);
-  max-width: var(--container-width);
-}
-
 .js-focus-visible :focus:not(.focus-visible) {
   outline: none;
+}
+
+.address {
+  position: relative;
+  display: none;
+
+  &__tel {
+    padding-left: 23px;
+    font-family: var(--second-family);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    background-repeat: no-repeat;
+    background-position: 3px 1px;
+    background-size: 17px 17px;
+    color: var(--color-yellow-light);
+  }
+}
+
+/* FORM-FIELDS
+------------------------------------*/
+.input-reset {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 0;
+  background-color: #fff;
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
 }
 
 .form-field {
@@ -205,24 +233,6 @@ input.form-field {
   height: 50px;
 }
 
-.address {
-  position: relative;
-  display: none;
-
-  &__tel {
-    padding-left: 23px;
-    font-family: var(--second-family);
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 21px;
-    background-repeat: no-repeat;
-    background-position: 3px 1px;
-    background-size: 17px 17px;
-    color: var(--color-yellow-light);
-  }
-}
-
 .field-wrap {
   position: relative;
 
@@ -243,80 +253,14 @@ input.form-field {
     }
   }
 }
-
-/* Parallax Star background
-----------------------------------------*/
-// n is number of stars required
-@function multiple-box-shadow($n) {
-  $value: '#{random(2000)}px #{random(2000)}px #FFF';
-  @for $i from 2 through $n {
-    $value: '#{$value} , #{random(2000)}px #{random(2000)}px #FFF';
-  }
-  @return unquote($value);
-}
-
-$shadows-small: multiple-box-shadow(700);
-$shadows-medium: multiple-box-shadow(200);
-$shadows-big: multiple-box-shadow(100);
-
-.uppercase {
-  text-transform: uppercase;
-}
-
-@mixin stars($size, $box-shadow) {
-  width: $size;
-  height: $size;
-  background: transparent;
-  box-shadow: $box-shadow;
-  animation: animStar 100s linear infinite;
-  &:after {
-    content: ' ';
-    position: absolute;
-    top: -2000px;
-    width: $size;
-    height: $size;
-    background: transparent;
-    box-shadow: $box-shadow;
-  }
-}
-
-.stars-small {
-  @include stars(1px, $shadows-small);
-}
-
-.stars-medium {
-  @include stars(2px, $shadows-medium);
-}
-
-.stars-big {
-  @include stars(3px, $shadows-big);
-}
-
-@keyframes animStar {
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(2000px);
-  }
-}
+/*------------------------------------*/
 
 .gradient-text {
   font-family: var(--font-family), sans-serif;
-  // background: -webkit-linear-gradient(white, var(--color-grey-2));
   background: -webkit-linear-gradient(white, var(--color-ultramarine));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
-.stars-toggle-btn {
-  position: absolute;
-  z-index: 100;
-  right: 1em;
-  bottom: 1em;
-}
-
-/*---------------------------------------*/
 
 /* The typing effect
 -----------------------------------*/
