@@ -3,10 +3,13 @@ import store from '../store';
 import { capitalizeFirstLetter } from '@/helpers';
 
 const menuRoutes = store.getters.getMenu.map((item) => {
+  const path = item.route === 'home' ? '/' : '/' + item.route;
+
   return {
-    path: '/' + item.route,
+    path,
     name: item.route,
-    component: import('@/views/' + capitalizeFirstLetter(item.route) + 'View'),
+    component: () =>
+      import('@/views/' + capitalizeFirstLetter(item.route) + 'View.vue'),
   };
 });
 

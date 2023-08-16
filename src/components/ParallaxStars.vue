@@ -19,7 +19,11 @@ export default {
     <div class="stars-big"></div>
   </template>
 
-  <button class="btn-reset btn stars-toggle-btn" @click="toggleStars">
+  <button
+    class="btn-reset btn stars-toggle-btn"
+    :class="{ 'btn-active': !getVisibleStars }"
+    @click="toggleStars"
+  >
     Disable Stars
   </button>
 </template>

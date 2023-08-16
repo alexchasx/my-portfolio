@@ -44,43 +44,5 @@ export default {
 </template>
 
 <style lang="scss">
-.hero {
-  &__content {
-    margin-top: 150px;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    background-color: transparent;
-  }
-
-  &__title {
-    margin-bottom: 42px;
-    padding-left: 10px;
-    font-weight: 300;
-    font-size: 46px;
-    letter-spacing: 5px;
-    line-height: 1.2;
-    text-align: center;
-    color: #fff;
-  }
-
-  .table {
-    margin-bottom: 42px;
-
-    &__row {
-      display: flex;
-      flex-direction: row;
-    }
-
-    &__col {
-      &--1 {
-        min-width: 180px;
-      }
-    }
-  }
-}
+@import '@/assets/styles/components/home-view.scss';
 </style>

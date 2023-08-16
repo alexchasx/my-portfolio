@@ -88,7 +88,7 @@ sup {
 
 .btn {
   position: relative;
-  border: 1px solid rgb(146, 148, 248);
+  border: 1px solid var(--color-ultramarine);
   overflow: hidden;
   padding: 13px 19px;
   min-height: 50px;
@@ -292,3 +292,9 @@ input.form-field {
 //   }
 // }
 /*-----------------------------------*/
+
+#app {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}

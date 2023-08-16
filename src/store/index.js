@@ -14,7 +14,6 @@ export default createStore({
   getters: {
     getVisibleStars: (state) => state._isVisibleStars,
     getMenu: (state) => state._menu,
-    // getMenuRouteName: (state) => (prop) => state._menu[prop],
   },
 
   mutations: {

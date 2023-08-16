@@ -1,12 +1,11 @@
 .header {
   position: absolute;
   z-index: 100;
-  width: 100%;
+  width: 100vw;
+  height: var(--header-height);
 
   &__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include align-center();
   }
 
   .burger {
@@ -22,14 +21,15 @@
       display: none;
     }
     &__list {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 752px;
+      padding: 20px;
+      @include align-center();
+      max-width: 752px;
     }
 
     &__item {
       position: relative;
+      padding: 10px;
+      @include align-center();
 
       &:not(:last-child) {
         margin-right: 52px;
@@ -51,6 +51,7 @@
 
         @include hover {
           color: var(--color-ultramarine);
+          outline: none;
         }
 
         &:active {

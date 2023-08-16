@@ -11,9 +11,9 @@ export default {
 </script>
 
 <template>
-  <parallax-stars />
   <header-component />
 
+  <parallax-stars />
 
   <main><router-view /></main>
 </template>

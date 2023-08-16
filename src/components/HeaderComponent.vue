@@ -28,7 +28,7 @@ export default {
             v-for="item in getMenu"
             :key="item.route"
           >
-            <router-link href="#" class="nav__link gradient-text" :to="{ name: item.route }">
+            <router-link href="#" class="nav__link gradient-text uppercase" :to="{ name: item.route }">
               {{ item.text }}
               <!-- <button class="btn-reset btn menu__btn gradient-text">
                 {{ item.text }}
