@@ -5,9 +5,10 @@
 // }
 
 .header {
-  position: absolute;
-  z-index: 100;
-  width: 100vw;
+  // position: absolute;
+  // z-index: 100;
+  // width: 100vw;
+  margin-bottom: 50px;
   height: var(--header-height);
 
   &__container {

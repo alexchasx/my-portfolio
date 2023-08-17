@@ -4,10 +4,13 @@ import ParallaxStars from '@/components/ParallaxStars.vue';
 </script>
 
 <template>
-  <header-component />
-
   <parallax-stars />
 
-  <main><router-view /></main>
-</template>
+  <div class="site-container">
+    <header-component />
 
+    <main>
+      <router-view />
+    </main>
+  </div>
+</template>

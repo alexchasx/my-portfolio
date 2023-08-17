@@ -9,9 +9,9 @@ const toggleStars = commonStore.toggleStars;
 
 <template>
   <template v-if="!isDisabledStars">
-    <div class="stars-small"></div>
-    <div class="stars-medium"></div>
-    <div class="stars-big"></div>
+    <div class="stars stars-small"></div>
+    <div class="stars stars-medium"></div>
+    <div class="stars stars-big"></div>
   </template>
 
   <button
