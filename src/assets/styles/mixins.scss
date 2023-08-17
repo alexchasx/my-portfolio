@@ -1,0 +1,10 @@
+@import './mixins/burger.scss';
+@import './mixins/font-face.scss';
+@import './mixins/disable-mob-hover.scss';
+@import './mixins/crop-text.scss';
+
+@mixin align-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
