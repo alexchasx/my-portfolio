@@ -1,6 +1,4 @@
 .about {
-  margin-bottom: 50px;
-
   &__container {
     display: flex;
     flex-direction: column;
@@ -11,11 +9,11 @@
   &__title {
     margin-bottom: 35px;
     font-weight: 300;
-    font-size: var(--text-3xl);
+    font-size: var(--text-2xl);
     letter-spacing: 4px;
     line-height: 1.2;
     text-align: center;
-    color: #fff;
+    // color: var(--color-light);
   }
 
   .table {
@@ -40,20 +38,10 @@
     background-color: transparent;
   }
 
-  &__title {
-    margin-bottom: 35px;
-    font-weight: 300;
-    font-size: var(--text-2xl);
-    letter-spacing: 3px;
-    line-height: 1.2;
-    text-align: center;
-    color: #fff;
-  }
-
   &__list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     gap: 30px;
   }
 

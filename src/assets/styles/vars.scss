@@ -1,7 +1,7 @@
 :root {
   // base
   --font-family: 'Lato', sans-serif;
-  --content-width: 1290px;
+  --content-width: 752px;
   --container-offset: 31px;
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
 
@@ -21,7 +21,10 @@
   --color-dark: #000;
   --color-debug: rgba(51, 51, 51, 0.3);
 
-  --color-ultramarine: rgba(146, 148, 248, 0.6);
+  --color-ultramarine: #9294f8;
+  // --color-ultramarine: rgba(146, 148, 248, 0.6);
+
+  --box-shadow-glow: 0 0 12px 2px var(--color-ultramarine);
 
   /* FONT-SIZE
   ------------------------------------*/
@@ -43,6 +46,4 @@
   /* 40px → 48px */
   --text-4xl: clamp(3rem, calc(2.0625rem + 1.953125vw), 3.625rem);
   /* ------------------------------------*/
-
-  --header-height: 81px;
 }

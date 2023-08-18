@@ -2,7 +2,7 @@ import { defineStore } from 'pinia';
 import { reactive, ref } from 'vue';
 
 export const useCommonStore = defineStore('common', () => {
-  const isDisabledStars = ref(false);
+  const isDisabledStars = ref(true);
   const menu = reactive([
     { route: 'about', text: 'About' },
     { route: 'experience', text: 'Experience' },

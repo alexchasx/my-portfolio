@@ -13,6 +13,7 @@ import IconMySQL from '@/components/icons/IconMySQL.vue';
 import IconSwagger from '@/components/icons/IconSwagger.vue';
 import IconNginx from '@/components/icons/IconNginx.vue';
 import IconApache from '@/components/icons/IconApache.vue';
+import IconSQL from '@/components/icons/IconSQL.vue';
 
 const table = [
   { col1: 'Full name:', col2: 'Chasovnikov Alexander' },
@@ -30,21 +31,35 @@ const frontEndSkills = [
   { label: 'Bootstrap', component: IconBootstrap },
   { label: 'JQuery', component: IconJQuery },
   { label: 'Jest', component: IconJest },
+  { label: 'Jest', component: IconJest },
+  { label: 'Jest', component: IconJest },
+  { label: 'Jest', component: IconJest },
+  { label: 'Jest', component: IconJest },
+  { label: 'Jest', component: IconJest },
 ];
 
 const backEndSkills = [
   { label: 'PHP', component: IconPHP },
   { label: 'Laravel', component: IconLaravel },
+  { label: 'SQL', component: IconSQL },
   { label: 'MySQL', component: IconMySQL },
   { label: 'Swagger', component: IconSwagger },
   { label: 'Nginx', component: IconNginx },
   { label: 'Apache', component: IconApache },
 ];
+
+// TODO
+// const tools = [
+//   { label: 'Git', component: IconLaravel },
+//   { label: 'Docker', component: IconPHP },
+//   { label: 'Postman', component: IconLaravel },
+//   { label: 'Ubuntu', component: IconLaravel },
+// ];
 </script>
 
 <template>
-  <section class="about">
-    <div class="about__container">
+  <section class="about section-offset">
+    <div class="container about__container">
       <h1 class="about__title">
         <div class="about__text gradient-text uppercase typewriter">
           FrontEnd/Fullstack
@@ -68,8 +83,8 @@ const backEndSkills = [
   </section>
 
   <section class="skills">
-    <div class="skills__container">
-      <h2 class="skills__title gradient-text uppercase">Skills</h2>
+    <div class="container skills__container">
+      <h2 class="section-title skills__title">Skills</h2>
       <ul class="list-reset skills__list">
         <li
           class="skills__item"

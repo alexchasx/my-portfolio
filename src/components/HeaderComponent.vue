@@ -7,7 +7,7 @@ const { menu } = storeToRefs(commonStore);
 </script>
 
 <template>
-  <header class="header">
+  <header class="header section-offset">
     <div class="container header__container">
       <div class="burger-wrap">
         <button class="btn-reset burger" aria-label="Открыть меню">
