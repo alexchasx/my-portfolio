@@ -7,13 +7,18 @@
   }
 
   &__title {
-    margin-bottom: 35px;
     font-weight: 300;
     font-size: var(--text-2xl);
     letter-spacing: 4px;
     line-height: 1.2;
     text-align: center;
     // color: var(--color-light);
+  }
+
+  &__sub-title {
+    margin-bottom: 35px;
+    max-width: min-content;
+    font-size: var(--text-xl);
   }
 
   .table {

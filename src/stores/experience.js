@@ -10,8 +10,13 @@ export const useExperienceStore = defineStore('experience', () => {
         timeInterval: 'Июнь 2017 — февраль 2018 (8 месяцев)',
         position: 'PHP-developer',
         company: ' в веб-студии "Dymov.TECH" (Fingineers)',
+        companyLink: 'https://fingineers.ru/',
         description: `Участие в разработке серверной части приложения
-          "Teamkraft" <a>https://www.teamkraft.net</a>`,
+          <a class="btn-reset link download-link"
+            target="_blank"
+            href="https://www.teamkraft.net">
+            Teamkraft
+          </a>`,
       },
       {
         id: 2,
@@ -19,6 +24,7 @@ export const useExperienceStore = defineStore('experience', () => {
         timeInterval: 'Февраль 2018 — август 2019 (1 год 7 месяцев)',
         position: 'Программист PHP (и JS по факту)',
         company: ' в "ООО ОФИСМАГ"',
+        companyLink: 'https://www.officemag.ru/',
         description: `Интеграция вёрстки, создание и правка функционала на PHP и JS,
           составление SQL-запросов для выгрузки данных из БД`,
       },
@@ -28,8 +34,16 @@ export const useExperienceStore = defineStore('experience', () => {
         timeInterval: 'Декабрь 2022 — август 2023 (8 месяцев)',
         position: 'Обучающийся',
         company: ' в "Skillbox"',
+        companyLink: 'https://skillbox.ru/',
         description: `Прохождение курса "Frontend-разработчик".
-          <br><a>Скачать диплом</a>`,
+          <br>
+          <br>
+          <a class="btn-reset btn download-link"
+            href="./test1_OLD.txt"
+            download>
+            Скачать диплом
+          </a>
+          `,
       },
     ].reverse()
   );

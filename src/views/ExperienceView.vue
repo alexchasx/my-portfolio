@@ -16,25 +16,30 @@ function toggleWork(work) {
       <h1 class="section-title experience__title typewriter">Experience</h1>
 
       <div class="timeline-container">
+        <!-- TODO? -->
         <!-- <base-preloader class="btn-spinner" v-if="cartLoading" /> -->
 
         <ul class="list-reset experience__list" v-if="works.length > 0">
-          <li
-            class="work"
-            v-for="work in works"
-            :key="work.id"
-            @click="toggleWork(work)"
-          >
+          <li class="work" v-for="work in works" :key="work.id">
             <div class="timeline-dot"></div>
 
-            <time class="work__time-interval">{{ work.timeInterval }}</time>
+            <time
+              class="work__time-interval gradient-text"
+              @click.self="toggleWork(work)"
+              >{{ work.timeInterval }}</time
+            >
             <div class="work__content" :class="{ open: work.isOpen }">
               <h3 class="work__title">
-                <span class="gradient-text">{{ work.position }}</span>
-                <span>{{ work.company }}</span>
+                <span class="work__position">{{ work.position }}</span>
+                <a
+                  target="_blank"
+                  :href="work.companyLink"
+                  class="work__company"
+                  >{{ work.company }}</a
+                >
               </h3>
 
-              <p class="work__desc">{{ work.description }}</p>
+              <p class="work__desc" v-html="work.description"></p>
             </div>
           </li>
         </ul>

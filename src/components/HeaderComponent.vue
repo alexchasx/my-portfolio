@@ -24,7 +24,7 @@ const { menu } = storeToRefs(commonStore);
           <li class="nav__item" v-for="item in menu" :key="item.route">
             <router-link
               href="#"
-              class="nav__link gradient-text uppercase"
+              class="nav__link gradient-text uppercase link"
               :to="{ name: item.route }"
             >
               {{ item.text }}
