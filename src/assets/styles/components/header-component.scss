@@ -1,4 +1,5 @@
 .header {
+  cursor: none;
   padding: 20px 0;
   height: 80px;
 
@@ -34,6 +35,7 @@
       }
 
       .nav__link {
+        cursor: none;
         padding: 10px 15px;
         font-family: var(--second-family);
         font-weight: 400;
