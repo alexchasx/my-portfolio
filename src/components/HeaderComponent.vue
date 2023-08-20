@@ -28,9 +28,6 @@ const { menu } = storeToRefs(commonStore);
               :to="{ name: item.route }"
             >
               {{ item.text }}
-              <!-- <button class="btn-reset btn menu__btn gradient-text">
-                {{ item.text }}
-              </button> -->
             </router-link>
           </li>
         </ul>

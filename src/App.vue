@@ -8,10 +8,6 @@ const cursor = ref(null);
 const moveCursor = (e) => {
   const mouseY = e.clientY;
   const mouseX = e.clientX;
-
-  console.log('mouseY', mouseY);
-  console.log('mouseX', mouseX);
-
   const cursorStyle = cursor.value.style;
 
   if (mouseY > 76) {

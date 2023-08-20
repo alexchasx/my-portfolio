@@ -34,13 +34,12 @@
 
       &.open {
         height: 165px !important;
-        overflow-y: auto;
       }
     }
 
     &__title {
       padding-top: 12px;
-      padding-bottom: 12px;
+      padding-bottom: 15px;
       font-family: var(--font-family);
       font-size: var(--text-lg);
       line-height: 1.75rem;
@@ -75,7 +74,7 @@
   &-dot {
     position: absolute;
     left: -1.5rem;
-    top: 27px;
+    top: 30px;
     z-index: 20;
     transform: translateX(-50%);
     height: 1rem;
