@@ -3,26 +3,9 @@ import IconLink from '@/components/icons/IconLink.vue';
 import IconGitHub from '@/components/icons/IconGitHub.vue';
 import { usePortfolioStore } from '@/stores/portfolio';
 import { storeToRefs } from 'pinia';
-import { ref, reactive } from 'vue';
 import TabsComponent from '@/components/TabsComponent.vue';
 
-const portfolioStore = usePortfolioStore();
-const { tabs } = storeToRefs(portfolioStore);
-
-// const isActivatedTabId = ref(1);
-// const activeProjects = portfolioStore.getActiveProjects(isActivatedTabId.value);
-
-// function activateTab(tabId) {
-//   isActivatedTabId.value = tabId;
-//   activeProjects.value = ref(portfolioStore.getActiveProjects(tabId));
-// }
-
-// console.log('activeProjects', activeProjects);
-
-// function getActiveProjects(tabId = 1) {
-//   // return portfolioStore.getActiveProjects(tabId);
-//   activeProjects.value = portfolioStore.getActiveProjects(tabId);
-// }
+const { tabs } = storeToRefs(usePortfolioStore());
 </script>
 
 <template>
@@ -31,41 +14,41 @@ const { tabs } = storeToRefs(portfolioStore);
       <h1 class="section-title portfolio__title typewriter">Portfolio</h1>
 
       <TabsComponent :tabs="tabs">
-        <!-- <TransitionGroup name="cards"> -->
-        <div
-          class="portfolio__content"
-          v-show="tab.isActive"
-          v-for="tab in tabs"
-          :key="tab.id"
-        >
-          <article
-            class="portfolio__item card"
-            v-for="project in tab.content"
-            :key="project.id"
+        <TransitionGroup name="cards">
+          <div
+            class="portfolio__content"
+            v-show="tab.isActive"
+            v-for="tab in tabs"
+            :key="tab.id"
           >
-            <div class="card__front">
-              <img
-                class="card__img"
-                :src="project.imageUrl"
-                :alt="project.title"
-              />
-            </div>
+            <article
+              class="portfolio__item card"
+              v-for="project in tab.content"
+              :key="project.id"
+            >
+              <div class="card__front">
+                <img
+                  class="card__img"
+                  :src="project.imgDesktop"
+                  :alt="project.title"
+                />
+              </div>
 
-            <div class="card__back">
-              <div class="card__content">
-                <h2 class="card__title">Проект "{{ project.title }}"</h2>
+              <div class="card__back">
+                <div class="card__content">
+                  <h2 class="card__title">{{ project.title }}</h2>
 
-                <p class="card__desc" v-html="project.description"></p>
+                  <p class="card__desc" v-html="project.description"></p>
 
-                <div class="card__icons">
-                  <IconLink />
-                  <IconGitHub />
+                  <div class="card__icons">
+                    <IconLink :href="project.link" v-if="project.link" />
+                    <IconGitHub :href="project.github" v-if="project.github" />
+                  </div>
                 </div>
               </div>
-            </div>
-          </article>
-        </div>
-        <!-- </TransitionGroup> -->
+            </article>
+          </div>
+        </TransitionGroup>
       </TabsComponent>
     </div>
   </section>

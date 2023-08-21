@@ -1,6 +1,10 @@
+<script setup>
+const { href } = defineProps({ href: String });
+</script>
+
 <template>
   <div class="svg-container">
-    <a href="#" class="icon-link">
+    <a target="_blank" :href="href" class="icon-link">
       <svg
         version="1.1"
         id="Capa_1"

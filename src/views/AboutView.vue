@@ -30,9 +30,11 @@ const { table, frontEndSkills, backEndSkills } = storeToRefs(aboutStore);
     </div>
   </section>
 
+  <hr>
+
   <section class="skills">
     <div class="container skills__container">
-      <h2 class="section-title skills__title">Skills</h2>
+      <h2 class="section-title skills__title">Tech stack</h2>
       <ul class="list-reset skills__list">
         <li
           class="skills__item"

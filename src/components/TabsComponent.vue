@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from 'vue';
-// import TabComponent from '@/components/TabComponent.vue';
 
 const { tabs } = defineProps({
   tabs: Array,
@@ -26,22 +25,10 @@ function selectTab(tabId) {
       :key="tab.id"
       @click="selectTab(tab.id)"
     >
-      {{ tab.title }}
+      {{ tab.title }} ({{ tab.content.length }})
     </li>
   </ul>
-
-  <!-- <TabComponent :isActive="tab.isActive" v-for="tab in tabs" :key="tab.id">{{
-      tab.content
-    }}</TabComponent> -->
-  <!--
-  <div
-    class="tabs__content"
-    v-show="tab.isActive"
-    v-for="tab in tabs"
-    :key="tab.id"
-  > -->
   <slot></slot>
-  <!-- </div> -->
 </template>
 
 <style lang="scss" scoped>
