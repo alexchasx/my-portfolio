@@ -17,9 +17,10 @@
 
   &__content {
     padding: 30px 15px;
+    padding-bottom: 700px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    align-content: flex-start;
     gap: 22px;
     max-height: 78vh;
     overflow-y: auto;
@@ -116,43 +117,33 @@
     transform: perspective(900px) rotateY(0deg);
   }
 
-  // .list-enter-active,
-  // .list-leave-active {
-  //   transition: all 0.3s ease;
-  // }
-  // .list-enter-from,
-  // .list-leave-to {
-  //   opacity: 0;
-  //   transform: translateX(130px);
-  // }
-
   .cards-enter-active {
-    animation: fadeIn 0.5s;
+    animation: fadeIn 0.27s;
   }
 
   .cards-leave-active {
-    animation: fadeOut 0.5s;
+    animation: fadeOut 0.27s;
   }
 
   @keyframes fadeIn {
     from {
       opacity: 0;
-      // transform: translateY(130px);
+      transform: translateY(130px);
     }
     to {
       opacity: 1;
-      // transform: translateY(0px);
+      transform: translateY(0px);
     }
   }
 
   @keyframes fadeOut {
     from {
       opacity: 1;
-      // transform: translateY(0px);
+      transform: translateY(0px);
     }
     to {
       opacity: 0;
-      // transform: translateY(130px);
+      transform: translateY(130px);
     }
   }
 }
