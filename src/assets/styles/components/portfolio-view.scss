@@ -24,6 +24,7 @@
     gap: 22px;
     max-height: 78vh;
     overflow-y: auto;
+    scrollbar-width: none;
   }
 
   .card {
@@ -92,7 +93,7 @@
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      gap: 15px;
+      gap: 20px;
 
       .icon-link svg {
         fill: var(--color-ultramarine);
