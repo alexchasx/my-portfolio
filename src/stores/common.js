@@ -4,11 +4,11 @@ import { reactive, ref } from 'vue';
 export const useCommonStore = defineStore('common', () => {
   const isDisabledStars = ref(false);
   const menu = reactive([
-    { route: 'about', text: 'About' },
-    { route: 'experience', text: 'Experience' },
+    { route: 'home', text: 'Главная' },
+    { route: 'experience', text: 'Опыт' },
     // { route: 'skills', text: 'Skills' },
-    { route: 'portfolio', text: 'Portfolio' },
-    { route: 'contacts', text: 'Contacts' },
+    { route: 'portfolio', text: 'Портфолио' },
+    { route: 'contacts', text: 'Контакты' },
   ]);
 
   const toggleStars = () => (isDisabledStars.value = !isDisabledStars.value);

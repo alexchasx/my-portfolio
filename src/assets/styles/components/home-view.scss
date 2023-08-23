@@ -1,4 +1,4 @@
-.about {
+.home {
   &__container {
     display: flex;
     flex-direction: column;
@@ -28,7 +28,7 @@
 
     &__col {
       &--1 {
-        min-width: 180px;
+        min-width: 210px;
       }
     }
   }
@@ -36,6 +36,7 @@
 
 .skills {
   &__container {
+    padding-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;

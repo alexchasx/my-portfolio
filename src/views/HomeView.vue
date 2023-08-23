@@ -1,25 +1,25 @@
 <script setup>
-import { useAboutStore } from '@/stores/about';
+import { useHomeStore } from '@/stores/home';
 import { storeToRefs } from 'pinia';
 
-const aboutStore = useAboutStore();
-const { table, frontEndSkills, backEndSkills } = storeToRefs(aboutStore);
+const homeStore = useHomeStore();
+const { table, frontEndSkills, backEndSkills } = storeToRefs(homeStore);
 </script>
 
 <template>
-  <section class="about section-offset">
-    <div class="container about__container">
-      <h1 lang="en" class="about__title gradient-text uppercase">
+  <section class="home section-offset">
+    <div class="container home__container">
+      <h1 lang="en" class="home__title gradient-text uppercase">
         FrontEnd/Fullstack
       </h1>
 
-      <p lang="en" class="about__sub-title gradient-text uppercase typewriter">
+      <p lang="en" class="home__sub-title gradient-text uppercase typewriter">
         Developer detected
       </p>
 
-      <div class="about__table table">
+      <div class="home__table table">
         <div
-          class="about__text gradient-text table__row"
+          class="home__text gradient-text table__row"
           v-for="item in table"
           :key="item.col1"
         >
@@ -30,11 +30,9 @@ const { table, frontEndSkills, backEndSkills } = storeToRefs(aboutStore);
     </div>
   </section>
 
-  <hr>
-
   <section class="skills">
     <div class="container skills__container">
-      <h2 class="section-title skills__title">Tech stack</h2>
+      <h2 class="section-title skills__title">Навыки</h2>
       <ul class="list-reset skills__list">
         <li
           class="skills__item"
@@ -62,5 +60,5 @@ const { table, frontEndSkills, backEndSkills } = storeToRefs(aboutStore);
 
 <style lang="scss" scoped>
 @import '@/assets/styles/main.scss';
-@import '@/assets/styles/components/about-view.scss';
+@import '@/assets/styles/components/home-view.scss';
 </style>

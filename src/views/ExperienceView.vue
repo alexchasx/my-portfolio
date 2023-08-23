@@ -13,7 +13,7 @@ function toggleWork(work) {
 <template>
   <section class="experience">
     <div class="container experience__container">
-      <h1 class="section-title experience__title typewriter">Experience</h1>
+      <h1 class="section-title experience__title typewriter">Опыт/Образование</h1>
 
       <div class="timeline-container">
         <!-- TODO? -->

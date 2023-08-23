@@ -17,12 +17,16 @@ import IconNginx from '@/components/icons/IconNginx.vue';
 import IconApache from '@/components/icons/IconApache.vue';
 import IconSQL from '@/components/icons/IconSQL.vue';
 
-export const useAboutStore = defineStore('about', () => {
+export const useHomeStore = defineStore('home', () => {
   const table = shallowReactive([
-    { col1: 'Full name:', col2: 'Chasovnikov Alexander' },
-    { col1: 'Birthday:', col2: 'December 24, 1985' },
-    { col1: 'Residence:', col2: 'Russia, Voronezh Region' },
-    { col1: 'Motivation:', col2: 'High' },
+    { col1: 'Фамилия, имя:', col2: 'Часовников Александр' },
+    { col1: 'День рождения:', col2: '24 декабря 1985 года' },
+    { col1: 'Место обитания:', col2: 'Россия, Воронежская область' },
+    { col1: 'Мотивация:', col2: 'Высокая' },
+    // { col1: 'Full name:', col2: 'Chasovnikov Alexander' },
+    // { col1: 'Birthday:', col2: 'December 24, 1985' },
+    // { col1: 'Residence:', col2: 'Russia, Voronezh Region' },
+    // { col1: 'Motivation:', col2: 'High' },
   ]);
 
   const frontEndSkills = shallowReactive([
@@ -33,11 +37,6 @@ export const useAboutStore = defineStore('about', () => {
     { label: 'Sass', component: IconSCSS },
     { label: 'Bootstrap', component: IconBootstrap },
     { label: 'JQuery', component: IconJQuery },
-    { label: 'Jest', component: IconJest },
-    { label: 'Jest', component: IconJest },
-    { label: 'Jest', component: IconJest },
-    { label: 'Jest', component: IconJest },
-    { label: 'Jest', component: IconJest },
     { label: 'Jest', component: IconJest },
   ]);
 

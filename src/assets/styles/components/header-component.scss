@@ -16,7 +16,6 @@
     margin-right: auto;
     margin-left: auto;
     width: 100vw;
-
     &__close {
       display: none;
     }
@@ -24,11 +23,16 @@
       @include align-center();
       justify-content: space-between;
       width: 100%;
+      gap: 20px;
+
     }
 
     &__item {
       position: relative;
+      display: flex;
       @include align-center();
+      justify-content: center;
+      width: 100%;
 
       &:not(:last-child) {
         margin-right: auto;
@@ -37,9 +41,11 @@
       .nav__link {
         cursor: none;
         padding: 10px 15px;
+        width: 100%;
         font-family: var(--second-family);
         font-weight: 400;
         font-size: var(--text-base);
+        text-align: center;
       }
     }
 

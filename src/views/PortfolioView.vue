@@ -11,7 +11,7 @@ const { tabs } = storeToRefs(usePortfolioStore());
 <template>
   <section class="portfolio">
     <div class="container portfolio__container">
-      <h1 class="section-title portfolio__title typewriter">Portfolio</h1>
+      <h1 class="section-title portfolio__title typewriter">Портфолио</h1>
 
       <TabsComponent :tabs="tabs">
         <TransitionGroup name="cards">
