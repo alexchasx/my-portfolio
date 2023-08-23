@@ -1,4 +1,4 @@
-# my-portfolio_frontend
+# my-portfolio--vue
 
 ## Project setup
 ```
