@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia';
 import { shallowReactive } from 'vue';
+import resumePdf from '@/assets/files/Resume-Chasovnikov.pdf';
 
 import IconVue from '@/components/icons/IconVue.vue';
 import IconJS from '@/components/icons/IconJS.vue';
@@ -17,12 +18,20 @@ import IconNginx from '@/components/icons/IconNginx.vue';
 import IconApache from '@/components/icons/IconApache.vue';
 import IconSQL from '@/components/icons/IconSQL.vue';
 
+
 export const useHomeStore = defineStore('home', () => {
   const table = shallowReactive([
     { col1: 'Фамилия, имя:', col2: 'Часовников Александр' },
-    { col1: 'День рождения:', col2: '24 декабря 1985 года' },
-    { col1: 'Место обитания:', col2: 'Россия, Воронежская область' },
+    { col1: 'День рождения:', col2: '24.12.1985' },
+    { col1: 'Проживает:', col2: 'Россия, Острогожск' },
     { col1: 'Мотивация:', col2: 'Высокая' },
+    {
+      col1: 'Резюме (pdf):',
+      col2: `<a class="link link-md"
+        href="${resumePdf}" download>Скачать</a>`,
+    },
+
+    // TODO: translations?
     // { col1: 'Full name:', col2: 'Chasovnikov Alexander' },
     // { col1: 'Birthday:', col2: 'December 24, 1985' },
     // { col1: 'Residence:', col2: 'Russia, Voronezh Region' },

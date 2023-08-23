@@ -23,8 +23,8 @@ const { table, frontEndSkills, backEndSkills } = storeToRefs(homeStore);
           v-for="item in table"
           :key="item.col1"
         >
-          <div class="table__col--1">{{ item.col1 }}</div>
-          <div class="table__col--2">{{ item.col2 }}</div>
+          <div class="table__col table__col--1" v-html="item.col1"></div>
+          <div class="table__col table__col--2" v-html="item.col2"></div>
         </div>
       </div>
     </div>

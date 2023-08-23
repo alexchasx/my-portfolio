@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia';
 import { reactive } from 'vue';
+import diplomFrontend from '@/assets/files/Diplom-Frontend-Chasovnikov.pdf';
 
 export const useExperienceStore = defineStore('experience', () => {
   const works = reactive(
@@ -39,11 +40,7 @@ export const useExperienceStore = defineStore('experience', () => {
           <br>
           <br>
           <a class="btn-reset btn download-link"
-            href="./test1_OLD.txt"
-            download>
-            Скачать диплом
-          </a>
-          `,
+            href="${diplomFrontend}" download>Скачать диплом</a>`,
       },
     ].reverse()
   );
