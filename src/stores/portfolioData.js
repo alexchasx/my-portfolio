@@ -14,6 +14,7 @@ import highPass350webp from '@/assets/images/high-pass350.webp';
 import sitDownPls350 from '@/assets/images/sitDownPls350.webp';
 import sitDownPlsProduct350 from '@/assets/images/sitDownPls-product350.webp';
 import techozavrrr350 from '@/assets/images/techozavrrr350.webp';
+import myPortfolio350 from '@/assets/images/my-portfolio350.webp';
 
 const WEB_LAYOUTS = 1;
 const JAVASCRIPT = 2;
@@ -179,10 +180,19 @@ export const portfolioProjects = [
     tabId: VUE_JS,
     imgDesktop: techozavrrr350,
     title: 'ТЕХНОЗАВРРР',
-    description: `Учебный проект. Создан в процессе прохождения курса
+    description: `Учебный проект на Vue 2. Создан в процессе прохождения курса
           "Frontend-разработчик" от ${SKILLBOX_LINK}`,
     link: GITHUB_PAGES_LINK + 'vue-2_shop-technozavrrr/#/',
     github: MY_GITHUB + 'vue-2_shop-technozavrrr',
+  },
+  {
+    id: 17,
+    tabId: VUE_JS,
+    imgDesktop: myPortfolio350,
+    title: 'Сайт-портфолио на Vue 3',
+    description: `Пет-проект на Vue 3 (Composition API)`,
+    link: GITHUB_PAGES_LINK + 'my-portfolio--vue/',
+    github: MY_GITHUB + 'my-portfolio--vue',
   },
 ];
 

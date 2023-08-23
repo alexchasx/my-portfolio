@@ -19,7 +19,7 @@ export const useContactsStore = defineStore('contacts', () => {
         href="mailto:${EMAIL}">${EMAIL}</a>`,
     },
     {
-      col1: 'Телеграмм:',
+      col1: 'Telegram:',
       col2: `<a target="_blank" class="link link-md"
         href="${TELEGRAM}">@a_chasovnikov</a>`,
     },
