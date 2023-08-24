@@ -13,7 +13,9 @@ function toggleWork(work) {
 <template>
   <section class="experience">
     <div class="container experience__container">
-      <h1 class="section-title experience__title typewriter">Опыт/Образование</h1>
+      <h1 class="section-title experience__title typewriter">
+        Опыт/Образование
+      </h1>
 
       <div class="timeline-container">
         <!-- TODO? -->
@@ -21,7 +23,7 @@ function toggleWork(work) {
 
         <ul class="list-reset experience__list" v-if="works.length > 0">
           <li class="work" v-for="work in works" :key="work.id">
-            <div class="timeline-dot"></div>
+            <div class="timeline-dot" :class="work.type + '-icon'"></div>
 
             <time
               class="work__time-interval gradient-text"

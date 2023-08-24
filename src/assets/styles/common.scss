@@ -66,6 +66,13 @@ sup {
   top: 0;
 }
 
+#app {
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+}
+
 .container {
   margin: 0 auto;
   padding: 0 var(--container-offset);
@@ -73,13 +80,15 @@ sup {
 }
 
 .site-container {
-  position: absolute;
+  position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  width: 100vw;
+  // width: 100vw;
+  width: var(--container-width);
+  // width: 1245px;
 }
 
 .uppercase {

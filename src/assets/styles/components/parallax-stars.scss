@@ -1,11 +1,12 @@
 /* Parallax Star background
 ----------------------------------------*/
 
+$positionX: 2000;
 // n is number of stars required
 @function multiple-box-shadow($n) {
-  $value: '#{random(2000)}px #{random(2000)}px #FFF';
+  $value: '#{random($positionX)}px #{random($positionX)}px #FFF';
   @for $i from 2 through $n {
-    $value: '#{$value} , #{random(2000)}px #{random(2000)}px #FFF';
+    $value: '#{$value} , #{random($positionX)}px #{random($positionX)}px #FFF';
   }
   @return unquote($value);
 }
@@ -16,6 +17,7 @@ $shadows-big: multiple-box-shadow(100);
 
 .stars {
   position: absolute;
+  left: 0;
   animation: animStar 100s linear infinite;
 
   &::after {
@@ -63,9 +65,10 @@ $shadows-big: multiple-box-shadow(100);
 .stars-toggle-btn {
   position: absolute;
   z-index: 100;
-  right: 1em;
-  bottom: 1em;
-  padding: 0.4rem 0.7rem;
-  min-height: 20px;
-  font-size: var(--text-sm);
+  top: 9em;
+  right: -25px;
+  padding: 0.2rem 0.3rem;
+  min-height: 14px;
+  font-size: var(--text-xs);
+  transform: rotate(-90deg);
 }

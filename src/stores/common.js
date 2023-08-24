@@ -6,7 +6,6 @@ export const useCommonStore = defineStore('common', () => {
   const menu = reactive([
     { route: 'home', text: 'Главная' },
     { route: 'experience', text: 'Опыт' },
-    // { route: 'skills', text: 'Skills' },
     { route: 'portfolio', text: 'Портфолио' },
     { route: 'contacts', text: 'Контакты' },
   ]);
