@@ -1,11 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router';
-// import store from '../store';
-// import { useCommonStore } from '@/stores/common';
-// import { capitalizeFirstLetter } from '@/helpers';
 import HomeView from '@/views/HomeView.vue';
 import ExperienceView from '@/views/ExperienceView.vue';
 import PortfolioView from '@/views/PortfolioView.vue';
 import ContactsView from '@/views/ContactsView.vue';
+import E404View from '@/views/E404View.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -29,6 +27,10 @@ const router = createRouter({
       path: '/contacts',
       name: 'contacts',
       component: ContactsView,
+    },
+    {
+      path: '/:any(.*)',
+      component: E404View,
     },
   ],
 });
