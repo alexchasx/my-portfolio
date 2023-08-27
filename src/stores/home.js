@@ -39,32 +39,32 @@ export const useHomeStore = defineStore('home', () => {
   ]);
 
   const frontEndSkills = shallowReactive([
-    { label: 'Vue', component: IconVue },
-    { label: 'JavaScript', component: IconJS },
-    { label: 'HTML5', component: IconHTML5 },
-    { label: 'CSS3', component: IconCSS3 },
-    { label: 'Sass', component: IconSCSS },
-    { label: 'Bootstrap', component: IconBootstrap },
-    { label: 'JQuery', component: IconJQuery },
-    { label: 'Jest', component: IconJest },
+    { label: 'Vue', icon: IconVue },
+    { label: 'JavaScript', icon: IconJS },
+    { label: 'HTML5', icon: IconHTML5 },
+    { label: 'CSS3', icon: IconCSS3 },
+    { label: 'Sass', icon: IconSCSS },
+    { label: 'Bootstrap', icon: IconBootstrap },
+    { label: 'JQuery', icon: IconJQuery },
+    { label: 'Jest', icon: IconJest },
   ]);
 
   const backEndSkills = shallowReactive([
-    { label: 'PHP', component: IconPHP },
-    { label: 'Laravel', component: IconLaravel },
-    { label: 'SQL', component: IconSQL },
-    { label: 'MySQL', component: IconMySQL },
-    { label: 'Swagger', component: IconSwagger },
-    { label: 'Nginx', component: IconNginx },
-    { label: 'Apache', component: IconApache },
+    { label: 'PHP', icon: IconPHP },
+    { label: 'Laravel', icon: IconLaravel },
+    { label: 'SQL', icon: IconSQL },
+    { label: 'MySQL', icon: IconMySQL },
+    { label: 'Swagger', icon: IconSwagger },
+    { label: 'Nginx', icon: IconNginx },
+    { label: 'Apache', icon: IconApache },
   ]);
 
   // TODO tools
   // const tools = [
-  //   { label: 'Git', component: IconLaravel },
-  //   { label: 'Docker', component: IconPHP },
-  //   { label: 'Postman', component: IconLaravel },
-  //   { label: 'Ubuntu', component: IconLaravel },
+  //   { label: 'Git', icon: IconLaravel },
+  //   { label: 'Docker', icon: IconPHP },
+  //   { label: 'Postman', icon: IconLaravel },
+  //   { label: 'Ubuntu', icon: IconLaravel },
   // ];
 
   return { table, frontEndSkills, backEndSkills };

@@ -25,7 +25,10 @@ function selectTab(tabId) {
       :key="tab.id"
       @click="selectTab(tab.id)"
     >
-      {{ tab.title }} ({{ tab.content.length }})
+      <component :is="tab.icon"></component>
+      <span class="tabs__title">{{ tab.title }}</span> ({{
+        tab.content.length
+      }})
     </li>
   </ul>
   <slot></slot>

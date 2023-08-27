@@ -39,7 +39,7 @@ const { table, frontEndSkills, backEndSkills } = storeToRefs(homeStore);
           v-for="skill in frontEndSkills"
           :key="skill.label"
         >
-          <component :is="skill.component"></component>
+          <component :is="skill.icon"></component>
           <div class="skills__label gradient-text">{{ skill.label }}</div>
         </li>
       </ul>
@@ -50,7 +50,7 @@ const { table, frontEndSkills, backEndSkills } = storeToRefs(homeStore);
           v-for="skill in backEndSkills"
           :key="skill.label"
         >
-          <component :is="skill.component"></component>
+          <component :is="skill.icon"></component>
           <div class="skills__label gradient-text">{{ skill.label }}</div>
         </li>
       </ul>

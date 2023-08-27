@@ -27,11 +27,22 @@ const { tabs } = storeToRefs(usePortfolioStore());
               :key="project.id"
             >
               <div class="card__front">
-                <img
-                  class="card__img"
-                  :src="project.imgDesktop"
-                  :alt="project.title"
-                />
+                <picture class="card__img">
+                  <source
+                    :srcset="project.imgMobile"
+                    media="(max-width: 767px)"
+                    width="290"
+                    height="193"
+                  />
+
+                  <img
+                    loading="lazy"
+                    :src="project.imgDesktop"
+                    :alt="project.title"
+                    width="350"
+                    height="233"
+                  />
+                </picture>
               </div>
 
               <div class="card__back">
