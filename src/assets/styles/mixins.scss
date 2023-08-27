@@ -16,3 +16,9 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+@mixin mobile {
+  @media (max-width: (767px)) {
+    @content;
+  }
+}

@@ -5,9 +5,7 @@
   --burger-height: 18px;
   --burger-line-height: 2px;
 
-  position: relative;
-  left: 246px;
-  bottom: -9px;
+  position: absolute;
   border: none;
   padding: 0;
   width: var(--burger-width);

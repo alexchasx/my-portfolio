@@ -25,7 +25,7 @@ export const useExperienceStore = defineStore('experience', () => {
         isOpen: false,
         type: WORK,
         timeInterval: 'Июнь 2017 — февраль 2018 (8 месяцев)',
-        position: 'PHP-developer',
+        position: 'PHP Developer',
         company: ' в веб-студии "Dymov.TECH" (Fingineers)',
         companyLink: 'https://fingineers.ru/',
         description: `Участие в разработке серверной части приложения

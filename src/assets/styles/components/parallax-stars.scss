@@ -65,10 +65,18 @@ $shadows-big: multiple-box-shadow(100);
 .stars-toggle-btn {
   position: absolute;
   z-index: 100;
-  top: 9em;
-  right: -25px;
-  padding: 0.2rem 0.3rem;
+  top: 4em;
+  right: 0;
+  padding: 5px;
+  padding-bottom: 2px;
   min-height: 14px;
-  font-size: var(--text-xs);
-  transform: rotate(-90deg);
+
+  @include mobile {
+    top: 0;
+  }
+
+  .svg-container {
+    width: 20px;
+    height: 20px;
+  }
 }

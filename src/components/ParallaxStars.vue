@@ -1,6 +1,7 @@
 <script setup>
 import { useCommonStore } from '@/stores/common';
 import { storeToRefs } from 'pinia';
+import IconStarOff from '@/components/icons/IconStarOff.vue';
 
 const commonStore = useCommonStore();
 const { isDisabledStars } = storeToRefs(commonStore);
@@ -19,7 +20,7 @@ const toggleStars = commonStore.toggleStars;
     :class="{ 'btn-active': isDisabledStars }"
     @click="toggleStars"
   >
-    Disable Stars
+    <IconStarOff />
   </button>
 </template>
 

@@ -1,14 +1,52 @@
 .header {
-  // cursor: none;
   padding: 20px 0;
   height: 80px;
+
+  @include mobile {
+    position: relative;
+    background-color: #333;
+    width: 100vh;
+    min-height: 43px;
+    height: 43px;
+  }
 
   &__container {
     @include align-center();
   }
 
+  @include mobile {
+    .burger-wrap {
+      display: inline-block;
+      background-color: #333;
+    }
+  }
+
   .burger {
     display: none;
+
+    @include mobile {
+      @include burger;
+      display: inline-block;
+      top: 11px;
+      right: calc(50% - 15px);
+
+      &::after {
+        opacity: 1;
+      }
+
+      &__line.open-menu {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  .burger.open-menu::before {
+    transform: rotate(45deg) translateY(6px) translateX(6px);
+  }
+
+  .burger.open-menu::after {
+    opacity: 0;
+    transform: translateY(30px);
   }
 
   .nav {
@@ -16,15 +54,28 @@
     margin-right: auto;
     margin-left: auto;
     width: 100vw;
+
+    @include mobile {
+      position: absolute;
+      top: 43px;
+      z-index: 100;
+    }
+
     &__close {
       display: none;
     }
+
     &__list {
       @include align-center();
       justify-content: space-between;
       width: 100%;
       gap: 20px;
 
+      @include mobile {
+        flex-direction: column;
+        background-color: #333;
+        gap: 8px;
+      }
     }
 
     &__item {
@@ -39,7 +90,6 @@
       }
 
       .nav__link {
-        // cursor: none;
         padding: 10px 15px;
         width: 100%;
         font-family: var(--second-family);
@@ -56,5 +106,35 @@
 
   .router-link-exact-active {
     box-shadow: var(--box-shadow-glow);
+  }
+}
+
+.fade-enter-active {
+  animation: fadeIn 0.5s;
+}
+
+.fade-leave-active {
+  animation: fadeOut 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100px);
   }
 }
