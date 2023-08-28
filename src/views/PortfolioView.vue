@@ -36,7 +36,6 @@ const { tabs } = storeToRefs(usePortfolioStore());
                   />
 
                   <img
-                    loading="lazy"
                     :src="project.imgDesktop"
                     :alt="project.title"
                     width="350"
@@ -53,7 +52,11 @@ const { tabs } = storeToRefs(usePortfolioStore());
 
                   <div class="card__icons">
                     <IconLink :href="project.link" v-if="project.link" />
-                    <IconGitHub :href="project.github" v-if="project.github" />
+                    <IconGitHub
+                      :title="project.title"
+                      :href="project.github"
+                      v-if="project.github"
+                    />
                   </div>
                 </div>
               </div>

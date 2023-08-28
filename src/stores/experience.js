@@ -15,7 +15,7 @@ export const useExperienceStore = defineStore('experience', () => {
         timeInterval: 'Сентябрь 2003 — июль 2008 (5 лет)',
         position: 'Студент',
         company: ' в Воронежском государственном техническом университете',
-        companyLink: null,
+        companyLink: 'https://cchgeu.ru/',
         description: `Получил высшее образование на факультете "Автоматика и
           электромеханика" по специальности "Электропривод и автоматика
           ПУ и ТК"`,

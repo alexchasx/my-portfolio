@@ -31,7 +31,7 @@ function toggleWork(work) {
               >{{ work.timeInterval }}</time
             >
             <div class="work__content" :class="{ open: work.isOpen }">
-              <h3 class="work__title">
+              <h2 class="work__title">
                 <span class="work__position">{{ work.position }}</span>
                 <a
                   target="_blank"
@@ -39,7 +39,7 @@ function toggleWork(work) {
                   class="work__company"
                   >{{ work.company }}</a
                 >
-              </h3>
+              </h2>
 
               <p class="work__desc" v-html="work.description"></p>
             </div>
