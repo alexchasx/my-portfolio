@@ -1,3 +1,5 @@
+import { markRaw } from 'vue';
+
 import lagoona350webp from '@/assets/images/lagoona-350.webp';
 import lagoona290webp from '@/assets/images/lagoona-290.webp';
 import lionic350webp from '@/assets/images/lionic-350.webp';
@@ -240,28 +242,28 @@ export const portfolioTabs = [
     id: WEB_LAYOUTS,
     isActive: true,
     title: 'Вёрстка',
-    icon: IconHTML5,
+    icon: markRaw(IconHTML5),
     content: null,
   },
   {
     id: JAVASCRIPT,
     isActive: false,
     title: 'JavaScript',
-    icon: IconJS,
+    icon: markRaw(IconJS),
     content: null,
   },
   {
     id: VUE_JS,
     isActive: false,
     title: 'Vue.js',
-    icon: IconVue,
+    icon: markRaw(IconVue),
     content: null,
   },
   {
     id: LARAVEL,
     isActive: false,
     title: 'Laravel',
-    icon: IconLaravel,
+    icon: markRaw(IconLaravel),
     content: null,
   },
 ];

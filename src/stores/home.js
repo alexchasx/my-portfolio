@@ -22,9 +22,10 @@ import IconSQL from '@/components/icons/IconSQL.vue';
 export const useHomeStore = defineStore('home', () => {
   const table = shallowReactive([
     { col1: 'Фамилия, имя:', col2: 'Часовников Александр' },
-    { col1: 'День рождения:', col2: '24.12.1985' },
-    { col1: 'Проживает:', col2: 'Россия, Острогожск' },
-    { col1: 'Мотивация:', col2: 'Высокая' },
+    // { col1: 'День рождения:', col2: '24.12.1985' },
+    { col1: 'Проживает:', col2: 'Россия, Воронежская обл.' },
+    { col1: 'График работы:', col2: 'Удалённая работа' },
+    // { col1: 'Мотивация:', col2: 'Высокая' },
     {
       col1: 'Резюме (pdf):',
       col2: `<a class="link link-md"
