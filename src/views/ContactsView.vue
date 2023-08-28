@@ -3,24 +3,23 @@ import { useContactsStore } from '@/stores/contacts';
 import { storeToRefs } from 'pinia';
 
 const contactsStore = useContactsStore();
-const { table } = storeToRefs(contactsStore);
+const { contacts } = storeToRefs(contactsStore);
 </script>
 
 <template>
   <section class="contacts">
     <div class="container contacts__container">
-      <h1 class="contacts__title gradient-text uppercase">Контакты</h1>
+      <h1 class="section-title contacts__title typewriter">Контакты/Файлы</h1>
 
-      <div class="contacts__table table">
-        <div
-          class="contacts__text gradient-text table__row"
-          v-for="item in table"
-          :key="item.col1"
-        >
-          <div class="table__col table__col--1" v-html="item.col1"></div>
-          <div class="table__col table__col--2" v-html="item.col2"></div>
-        </div>
-      </div>
+      <ul class="list-reset contacts__list icon-list">
+        <li v-for="contact in contacts" :key="contact.title">
+          <component
+            :title="contact.title"
+            :href="contact.href"
+            :is="contact.icon"
+          ></component>
+        </li>
+      </ul>
     </div>
   </section>
 </template>

@@ -1,21 +1,24 @@
+<script setup>
+const { href, title } = defineProps({ href: String, title: String });
+</script>
+
 <template>
   <div class="svg-container">
-    <a href="https://t.me/a_chasovnikov"
+    <a target="_blank" :href="href" class="icon-link"
       ><svg
         viewBox="0 0 256 256"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
         preserveAspectRatio="xMidYMid"
-        aria-labelledby="Apache"
+        aria-labelledby="Telegram"
         role="presentation"
-        class="icon about__icon icon__apache"
+        class="icon about__icon icon__telegram"
       >
-        <title lang="en">https://t.me/a_chasovnikov</title>
+        <title lang="en">{{ title }}</title>
         <g>
           <path
             d="M128,0 C57.307,0 0,57.307 0,128 L0,128 C0,198.693 57.307,256 128,256 L128,256 C198.693,256 256,198.693 256,128 L256,128 C256,57.307 198.693,0 128,0 L128,0 Z"
-            fill="#40B3E0"
           ></path>
           <path
             d="M190.2826,73.6308 L167.4206,188.8978 C167.4206,188.8978 164.2236,196.8918 155.4306,193.0548 L102.6726,152.6068 L83.4886,143.3348 L51.1946,132.4628 C51.1946,132.4628 46.2386,130.7048 45.7586,126.8678 C45.2796,123.0308 51.3546,120.9528 51.3546,120.9528 L179.7306,70.5928 C179.7306,70.5928 190.2826,65.9568 190.2826,73.6308"
@@ -33,3 +36,8 @@
     ></a>
   </div>
 </template>
+
+<style lang="scss" scoped>
+@import '@/assets/styles/main.scss';
+@import '@/assets/styles/components/contacts-view.scss';
+</style>

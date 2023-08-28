@@ -6,29 +6,35 @@
     background-color: transparent;
   }
 
-  &__title {
-    margin-bottom: 35px;
-    font-weight: 300;
-    font-size: var(--text-2xl);
-    letter-spacing: 4px;
-    line-height: 1.2;
-    text-align: center;
-  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 
-  .table {
-    &__row {
-      display: flex;
-      flex-direction: row;
-      padding: 3px 0px;
+    .icon-link svg {
+      fill: var(--color-ultramarine);
+      transition: fill 0.3s ease-in-out, stroke 0.3s ease-in-out;
+      cursor: pointer;
     }
 
-    &__col {
-      padding: 4px;
-      font-size: var(--text-md);
-
-      &--1 {
-        min-width: 135px;
+    .svg-container {
+      width: 40px;
+      height: 40px;
+      @include mobile {
+        width: 30px;
+        height: 30px;
       }
+    }
+
+    .icon-link:hover svg {
+      fill: var(--color-ultramarine-light);
+    }
+
+    .icon-link:active svg {
+      fill: var(--color-ultramarine-dark);
     }
   }
 }
