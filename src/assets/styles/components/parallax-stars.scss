@@ -67,8 +67,8 @@ $shadows-big: multiple-box-shadow(100);
   z-index: 100;
   top: 4em;
   right: 0;
-  padding: 5px;
-  padding-bottom: 2px;
+  padding: 7px;
+  padding-bottom: 5px;
   min-height: 14px;
 
   @include mobile {

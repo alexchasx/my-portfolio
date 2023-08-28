@@ -4,8 +4,8 @@
 
   @include mobile {
     position: relative;
-    background-color: #333;
-    width: 100vh;
+    background-color: var(--color-ultramarine-dark);
+    width: 109vh;
     min-height: 43px;
     height: 43px;
   }
@@ -14,10 +14,10 @@
     @include align-center();
   }
 
-  @include mobile {
-    .burger-wrap {
+  .burger-wrap {
+    @include mobile {
       display: inline-block;
-      background-color: #333;
+      background-color: var(--color-ultramarine-dark);
     }
   }
 
@@ -27,8 +27,10 @@
     @include mobile {
       @include burger;
       display: inline-block;
-      top: 11px;
+      top: 8px;
       right: calc(50% - 15px);
+      width: 30px;
+      height: 28px;
 
       &::after {
         opacity: 1;
@@ -41,6 +43,7 @@
   }
 
   .burger.open-menu::before {
+    top: 3px;
     transform: rotate(45deg) translateY(8px) translateX(8px);
   }
 
@@ -73,7 +76,7 @@
 
       @include mobile {
         flex-direction: column;
-        background-color: #333;
+        background-color: var(--color-ultramarine-dark);
         gap: 8px;
       }
     }

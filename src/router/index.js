@@ -1,12 +1,15 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router';
 import HomeView from '@/views/HomeView.vue';
 import ExperienceView from '@/views/ExperienceView.vue';
 import PortfolioView from '@/views/PortfolioView.vue';
 import ContactsView from '@/views/ContactsView.vue';
 import E404View from '@/views/E404View.vue';
 
+const PUBLIC_PATH = '/my-portfolio--vue/';
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  // history: createWebHashHistory(PUBLIC_PATH),
   routes: [
     {
       path: '/',

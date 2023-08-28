@@ -69,10 +69,18 @@
 
     &__front {
       transform: perspective(900px) rotateY(0deg);
+
+      &--open {
+        transform: perspective(900px) rotateY(-180deg);
+      }
     }
 
     &__back {
       transform: perspective(900px) rotateY(180deg);
+
+      &--open {
+        transform: perspective(900px) rotateY(0deg);
+      }
     }
 
     &__content {
@@ -116,13 +124,6 @@
         fill: var(--color-ultramarine-dark);
       }
     }
-  }
-
-  .card:hover > .card__front {
-    transform: perspective(900px) rotateY(-180deg);
-  }
-  .card:hover > .card__back {
-    transform: perspective(900px) rotateY(0deg);
   }
 
   .cards-enter-active {

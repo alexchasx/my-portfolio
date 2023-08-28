@@ -4,8 +4,14 @@ import IconGitHub from '@/components/icons/IconGitHub.vue';
 import { usePortfolioStore } from '@/stores/portfolio';
 import { storeToRefs } from 'pinia';
 import TabsComponent from '@/components/TabsComponent.vue';
+import { ref } from 'vue';
 
 const { tabs } = storeToRefs(usePortfolioStore());
+
+// let isOpenCard = ref(false);
+// function doToggleCard(id) {
+//   isOpenCard.value = !isOpenCard.value;
+// }
 </script>
 
 <template>
@@ -25,8 +31,12 @@ const { tabs } = storeToRefs(usePortfolioStore());
               class="portfolio__item card"
               v-for="project in tab.content"
               :key="project.id"
+              @click="project.isOpen = !project.isOpen"
             >
-              <div class="card__front">
+              <div
+                class="card__front"
+                :class="{ 'card__front--open': project.isOpen }"
+              >
                 <picture class="card__img">
                   <source
                     :srcset="project.imgMobile"
@@ -44,7 +54,10 @@ const { tabs } = storeToRefs(usePortfolioStore());
                 </picture>
               </div>
 
-              <div class="card__back">
+              <div
+                class="card__back"
+                :class="{ 'card__back--open': project.isOpen }"
+              >
                 <div class="card__content">
                   <h2 class="card__title">{{ project.title }}</h2>
 

@@ -52,6 +52,7 @@ const MY_GITHUB = 'https://github.com/alexchasx/';
 export const portfolioProjects = [
   {
     id: 1,
+    isOpen: false,
     tabId: WEB_LAYOUTS,
     imgDesktop: lagoona350webp,
     imgMobile: lagoona290webp,
@@ -63,6 +64,7 @@ export const portfolioProjects = [
   },
   {
     id: 2,
+    isOpen: false,
     tabId: WEB_LAYOUTS,
     imgDesktop: lionic350webp,
     imgMobile: lionic290webp,
@@ -74,6 +76,7 @@ export const portfolioProjects = [
   },
   {
     id: 3,
+    isOpen: false,
     tabId: WEB_LAYOUTS,
     imgDesktop: modelingCourses350webp,
     imgMobile: modelingCourses290webp,
@@ -85,6 +88,7 @@ export const portfolioProjects = [
   },
   {
     id: 4,
+    isOpen: false,
     tabId: WEB_LAYOUTS,
     imgDesktop: evklid350webp,
     imgMobile: evklid290webp,
@@ -96,6 +100,7 @@ export const portfolioProjects = [
   },
   {
     id: 5,
+    isOpen: false,
     tabId: JAVASCRIPT,
     imgDesktop: gamePairs350webp,
     imgMobile: gamePairs290webp,
@@ -107,6 +112,7 @@ export const portfolioProjects = [
   },
   {
     id: 6,
+    isOpen: false,
     tabId: JAVASCRIPT,
     imgDesktop: bankSystem350webp,
     imgMobile: bankSystem290webp,
@@ -118,6 +124,7 @@ export const portfolioProjects = [
   },
   {
     id: 7,
+    isOpen: false,
     tabId: JAVASCRIPT,
     imgDesktop: todoList350webp,
     imgMobile: todoList290webp,
@@ -129,6 +136,7 @@ export const portfolioProjects = [
   },
   {
     id: 8,
+    isOpen: false,
     tabId: VUE_JS,
     imgDesktop: moire350webp,
     imgMobile: moire290webp,
@@ -140,6 +148,7 @@ export const portfolioProjects = [
   },
   {
     id: 9,
+    isOpen: false,
     tabId: LARAVEL,
     imgDesktop: laravelOrchidBlog350webp,
     imgMobile: laravelOrchidBlog290webp,
@@ -150,6 +159,7 @@ export const portfolioProjects = [
   },
   {
     id: 10,
+    isOpen: false,
     tabId: LARAVEL,
     imgDesktop: teamkraft350webp,
     imgMobile: teamkraft290webp,
@@ -161,6 +171,7 @@ export const portfolioProjects = [
   },
   {
     id: 11,
+    isOpen: false,
     tabId: WEB_LAYOUTS,
     imgDesktop: htmlEmail350webp,
     imgMobile: htmlEmail290webp,
@@ -172,6 +183,7 @@ export const portfolioProjects = [
   },
   {
     id: 12,
+    isOpen: false,
     tabId: WEB_LAYOUTS,
     imgDesktop: animation350webp,
     imgMobile: animation290webp,
@@ -183,6 +195,7 @@ export const portfolioProjects = [
   },
   {
     id: 13,
+    isOpen: false,
     tabId: WEB_LAYOUTS,
     imgDesktop: highPass350webp,
     imgMobile: highPass290webp,
@@ -194,6 +207,7 @@ export const portfolioProjects = [
   },
   {
     id: 14,
+    isOpen: false,
     tabId: WEB_LAYOUTS,
     imgDesktop: sitDownPls350,
     imgMobile: sitDownPls290,
@@ -205,6 +219,7 @@ export const portfolioProjects = [
   },
   {
     id: 15,
+    isOpen: false,
     tabId: WEB_LAYOUTS,
     imgDesktop: sitDownPlsProduct350,
     imgMobile: sitDownPlsProduct290,
@@ -216,6 +231,7 @@ export const portfolioProjects = [
   },
   {
     id: 16,
+    isOpen: false,
     tabId: VUE_JS,
     imgDesktop: techozavrrr350,
     imgMobile: techozavrrr290,
@@ -227,6 +243,7 @@ export const portfolioProjects = [
   },
   {
     id: 17,
+    isOpen: false,
     tabId: VUE_JS,
     imgDesktop: myPortfolio350,
     imgMobile: myPortfolio290,
