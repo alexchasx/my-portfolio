@@ -4,14 +4,8 @@ import IconGitHub from '@/components/icons/IconGitHub.vue';
 import { usePortfolioStore } from '@/stores/portfolio';
 import { storeToRefs } from 'pinia';
 import TabsComponent from '@/components/TabsComponent.vue';
-import { ref } from 'vue';
 
 const { tabs } = storeToRefs(usePortfolioStore());
-
-// let isOpenCard = ref(false);
-// function doToggleCard(id) {
-//   isOpenCard.value = !isOpenCard.value;
-// }
 </script>
 
 <template>
