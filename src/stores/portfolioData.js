@@ -34,6 +34,8 @@ import techozavrrr350 from '@/assets/images/techozavrrr350.webp';
 import techozavrrr290 from '@/assets/images/techozavrrr290.webp';
 import myPortfolio350 from '@/assets/images/my-portfolio350.webp';
 import myPortfolio290 from '@/assets/images/my-portfolio290.webp';
+import todos350 from '@/assets/images/todos-350.webp';
+import todos290 from '@/assets/images/todos-290.webp';
 
 import IconHTML5 from '@/components/icons/IconHTML5.vue';
 import IconJS from '@/components/icons/IconJS.vue';
@@ -133,18 +135,6 @@ export const portfolioProjects = [
           "Frontend-разработчик" от ${SKILLBOX_LINK}`,
     link: GITHUB_PAGES_LINK + 'js-project_todo--client/',
     github: MY_GITHUB + 'js-project_todo--client',
-  },
-  {
-    id: 8,
-    isOpen: false,
-    tabId: VUE_JS,
-    imgDesktop: moire350webp,
-    imgMobile: moire290webp,
-    title: 'Moire',
-    description: `Дипломный проект на Vue 3 курса
-          "Frontend-разработчик" от ${SKILLBOX_LINK}`,
-    link: GITHUB_PAGES_LINK + 'vue-3_shop-moire/#/',
-    github: MY_GITHUB + 'vue-3_shop-moire',
   },
   {
     id: 9,
@@ -251,6 +241,29 @@ export const portfolioProjects = [
     description: `Пет-проект на Vue 3 (Composition API)`,
     link: GITHUB_PAGES_LINK + 'my-portfolio--vue/',
     github: MY_GITHUB + 'my-portfolio--vue',
+  },
+  {
+    id: 18,
+    isOpen: false,
+    tabId: VUE_JS,
+    imgDesktop: todos350,
+    imgMobile: todos290,
+    title: 'Todos',
+    description: `Список задач на Vue 3 (Options API) и TypeScript`,
+    link: GITHUB_PAGES_LINK + 'todos--vue/',
+    github: MY_GITHUB + 'todos--vue',
+  },
+  {
+    id: 19,
+    isOpen: false,
+    tabId: VUE_JS,
+    imgDesktop: moire350webp,
+    imgMobile: moire290webp,
+    title: 'Moire',
+    description: `Дипломный проект на Vue 3 курса
+          "Frontend-разработчик" от ${SKILLBOX_LINK}`,
+    link: GITHUB_PAGES_LINK + 'vue-3_shop-moire/#/',
+    github: MY_GITHUB + 'vue-3_shop-moire',
   },
 ];
 
