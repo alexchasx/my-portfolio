@@ -1,16 +1,18 @@
-import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router';
+import {
+  createRouter,
+  createWebHashHistory,
+  createWebHistory,
+} from 'vue-router';
 import HomeView from '@/views/HomeView.vue';
 import ExperienceView from '@/views/ExperienceView.vue';
 import PortfolioView from '@/views/PortfolioView.vue';
 import ContactsView from '@/views/ContactsView.vue';
 import E404View from '@/views/E404View.vue';
 
-// для GitHub-Pages
 const PUBLIC_PATH = '/my-portfolio--vue/';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  // Используется для GitHub-Pages
   // history: createWebHashHistory(PUBLIC_PATH),
   routes: [
     {
