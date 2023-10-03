@@ -1,5 +1,5 @@
 <script setup>
-const { href } = defineProps({ href: String });
+const { href, title } = defineProps({ href: String, title: String });
 </script>
 
 <template>
@@ -15,12 +15,12 @@ const { href } = defineProps({ href: String });
         viewBox="0 0 300 300"
         style="enable-background: new 0 0 300 300"
         xml:space="preserve"
-        aria-labelledby="Lagoona"
+        aria-labelledby="Link"
         role="presentation"
         class="icon card__icon"
         fill="none"
       >
-        <title lang="en">Lagoona</title>
+        <title lang="en">{{ title }}</title>
         <g>
           <g>
             <g>
