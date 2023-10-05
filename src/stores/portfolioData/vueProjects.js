@@ -36,8 +36,8 @@ export const vueProjects = [
     imgMobile: myPortfolio290,
     title: 'Сайт-портфолио на Vue 3',
     description: `Пет-проект на Vue 3 (Composition API)`,
-    link: GITHUB_PAGES_LINK + 'my-portfolio--vue/',
-    github: MY_GITHUB + 'my-portfolio--vue',
+    link: GITHUB_PAGES_LINK + 'my-portfolio/',
+    github: MY_GITHUB + 'my-portfolio',
   },
   {
     id: VUE_JS + 3,
