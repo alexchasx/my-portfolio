@@ -48,7 +48,7 @@ export const useExperienceStore = defineStore('experience', () => {
       },
       {
         id: 4,
-        isOpen: true,
+        isOpen: false,
         type: LEARNING,
         timeInterval: 'Декабрь 2022 — август 2023 (8 месяцев)',
         position: 'Обучающийся',
@@ -59,6 +59,16 @@ export const useExperienceStore = defineStore('experience', () => {
           <br>
           <a class="btn-reset btn download-link"
             href="${diplomFrontend}" download>Скачать диплом</a>`,
+      },
+      {
+        id: 5,
+        isOpen: true,
+        type: LEARNING,
+        timeInterval: 'Октябрь 2023 — ...',
+        position: 'Веб-разработчик',
+        company: ' в ООО "Элком"',
+        companyLink: 'https://www.elcomspb.ru/',
+        description: ``,
       },
     ].reverse()
   );

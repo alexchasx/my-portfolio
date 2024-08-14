@@ -10,11 +10,11 @@ const { table, frontEndSkills, backEndSkills } = storeToRefs(homeStore);
   <section class="home section-offset">
     <div class="container home__container">
       <h1 lang="en" class="home__title gradient-text uppercase">
-        FrontEnd/Fullstack
+        Fullstack (PHP/JS)
       </h1>
 
       <p lang="en" class="home__sub-title gradient-text uppercase typewriter">
-        Developer detected
+        Developer
       </p>
 
       <div class="home__table table">
