@@ -9,10 +9,11 @@ import IconCSS3 from '@/components/icons/IconCSS3.vue';
 import IconSCSS from '@/components/icons/IconSCSS.vue';
 import IconBootstrap from '@/components/icons/IconBootstrap.vue';
 import IconJQuery from '@/components/icons/IconJQuery.vue';
-import IconJest from '@/components/icons/IconJest.vue';
+// import IconJest from '@/components/icons/IconJest.vue';
 import IconPHP from '@/components/icons/IconPHP.vue';
 import IconLaravel from '@/components/icons/IconLaravel.vue';
 import IconMySQL from '@/components/icons/IconMySQL.vue';
+import IconPostgreSQL from '@/components/icons/IconPostgreSQL.vue';
 import IconSwagger from '@/components/icons/IconSwagger.vue';
 import IconNginx from '@/components/icons/IconNginx.vue';
 import IconApache from '@/components/icons/IconApache.vue';
@@ -22,10 +23,9 @@ import IconSQL from '@/components/icons/IconSQL.vue';
 export const useHomeStore = defineStore('home', () => {
   const table = shallowReactive([
     { col1: 'Фамилия, имя:', col2: 'Часовников Александр' },
-    // { col1: 'День рождения:', col2: '24.12.1985' },
-    { col1: 'Проживает:', col2: 'Россия, Воронежск. обл.' },
+    { col1: 'Проживает:', col2: 'Россия, Белгородская обл.' },
+    { col1: 'Коммерческий опыт:&nbsp;', col2: ' 5 лет' },
     { col1: 'График работы:', col2: 'Удалённая работа' },
-    // { col1: 'Мотивация:', col2: 'Высокая' },
     {
       col1: 'Резюме (pdf):',
       col2: `<a class="link link-md"
@@ -47,13 +47,14 @@ export const useHomeStore = defineStore('home', () => {
     { label: 'Sass', icon: IconSCSS },
     { label: 'Bootstrap', icon: IconBootstrap },
     { label: 'JQuery', icon: IconJQuery },
-    { label: 'Jest', icon: IconJest },
+    // { label: 'Jest', icon: IconJest },
   ]);
 
   const backEndSkills = shallowReactive([
     { label: 'PHP', icon: IconPHP },
     { label: 'Laravel', icon: IconLaravel },
     { label: 'SQL', icon: IconSQL },
+    { label: 'PostgreSQL', icon: IconPostgreSQL },
     { label: 'MySQL', icon: IconMySQL },
     { label: 'Swagger', icon: IconSwagger },
     { label: 'Nginx', icon: IconNginx },

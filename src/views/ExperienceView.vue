@@ -17,6 +17,8 @@ function toggleWork(work) {
         Опыт/Образование
       </h1>
 
+      <p>Коммерческий опыт веб‑разработки: 5 лет</p>
+
       <div class="timeline-container">
         <!-- TODO? -->
         <!-- <base-preloader class="btn-spinner" v-if="cartLoading" /> -->

@@ -12,7 +12,7 @@ export const useExperienceStore = defineStore('experience', () => {
         id: 1,
         isOpen: false,
         type: LEARNING,
-        timeInterval: 'Сентябрь 2003 — июль 2008 (5 лет)',
+        timeInterval: 'Сентябрь 2003 — июль 2008 [УЧЁБА]',
         position: 'Студент',
         company: ' в Воронежском государственном техническом университете',
         companyLink: 'https://cchgeu.ru/',
@@ -28,29 +28,58 @@ export const useExperienceStore = defineStore('experience', () => {
         position: 'PHP Developer',
         company: ' в веб-студии "Dymov.TECH" (Fingineers)',
         companyLink: 'https://fingineers.ru/',
-        description: `Участие в разработке серверной части приложения
+        description: `Разработка серверной части приложения
           <a class="btn-reset link download-link"
             target="_blank"
             href="https://www.teamkraft.net">
             Teamkraft
-          </a>`,
+          </a> на базе фреймворка Laravel.
+          Используемые технологии: PHP, Laravel, PostgreSQL, Swagger, REST API, Eloquent
+          `,
       },
       {
         id: 3,
         isOpen: false,
         type: WORK,
         timeInterval: 'Февраль 2018 — август 2019 (1 год 7 месяцев)',
-        position: 'Программист PHP (и JS по факту)',
+        position: 'Программист PHP',
         company: ' в "ООО ОФИСМАГ"',
         companyLink: 'https://www.officemag.ru/',
-        description: `Интеграция вёрстки, создание и правка функционала на PHP и JS,
-          составление SQL-запросов для выгрузки данных из БД`,
+        description: `
+        Доработка сайтов:
+          <a class="btn-reset link download-link"
+            target="_blank"
+            href="https://www.officemag.ru/">
+            officemag.ru
+          </a>,
+          <a class="btn-reset link download-link"
+            target="_blank"
+            href="https://www.samsonopt.ru/">
+            samsonopt.ru
+          </a>,
+          <a class="btn-reset link download-link"
+            target="_blank"
+            href="https://www.brauberg.com/">
+            brauberg.com
+          </a>,
+          <a class="btn-reset link download-link"
+            target="_blank"
+            href="https://www.laima.info/">
+            laima.info/
+          </a>,
+          <a class="btn-reset link download-link"
+            target="_blank"
+            href="https://www.sonnen.me/">
+            sonnen.me/
+          </a> и другие.
+          <br>
+        Используемые технологии: PHP, Laravel, 1C-Битрикс, MySQL, SQL, JavaScript, jQuery, HTML, CSS, unit-тесты`,
       },
       {
         id: 4,
         isOpen: false,
         type: LEARNING,
-        timeInterval: 'Декабрь 2022 — август 2023 (8 месяцев)',
+        timeInterval: 'Декабрь 2022 — август 2023 [УЧЁБА]',
         position: 'Обучающийся',
         company: ' в "Skillbox"',
         companyLink: 'https://skillbox.ru/',
@@ -63,12 +92,26 @@ export const useExperienceStore = defineStore('experience', () => {
       {
         id: 5,
         isOpen: true,
-        type: LEARNING,
-        timeInterval: 'Октябрь 2023 — ...',
+        type: WORK,
+        timeInterval: 'Октябрь 2023 — Июнь 2026 (2 года 9 месяцев)',
         position: 'Веб-разработчик',
         company: ' в ООО "Элком"',
         companyLink: 'https://www.elcomspb.ru/',
-        description: ``,
+        description: `
+        Доработка внутреннего портала
+          <a class="btn-reset link download-link"
+            target="_blank"
+            href="https://portal.elcomspb.ru/">
+            portal.elcomspb.ru/
+          </a> и основного сайта кампании
+          <a class="btn-reset link download-link"
+            target="_blank"
+            href="https://www.elcomspb.ru">
+            elcomspb.ru
+          </a>.
+          <br>
+        Используемые технологии: PHP, Laravel, OpenCart, MySQL, PostgreSQL, Docker, VueJS2, JavaScript, HTML, CSS, REST API, Redis
+        `,
       },
     ].reverse()
   );

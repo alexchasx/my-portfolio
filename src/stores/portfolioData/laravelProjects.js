@@ -13,7 +13,7 @@ export const laravelProjects = [
     imgDesktop: laravelOrchidBlog350webp,
     imgMobile: laravelOrchidBlog290webp,
     title: 'laravel-orchid-blog',
-    description: `Пет-проект на Laravel`,
+    description: `Пет-проект (блог) на Laravel`,
     link: 'https://alexchas-dev.ru/',
     github: MY_GITHUB + 'laravel-orchid-blog',
   },
