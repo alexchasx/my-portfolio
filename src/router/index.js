@@ -2,11 +2,13 @@ import {
   createRouter,
   createWebHistory,
 } from 'vue-router';
-import HomeView from '@/views/HomeView.vue';
-import ExperienceView from '@/views/ExperienceView.vue';
-import PortfolioView from '@/views/PortfolioView.vue';
-import ContactsView from '@/views/ContactsView.vue';
-import E404View from '@/views/E404View.vue';
+
+// Ленивая загрузка представлений — code-splitting по маршрутам
+const HomeView = () => import('@/views/HomeView.vue');
+const ExperienceView = () => import('@/views/ExperienceView.vue');
+const PortfolioView = () => import('@/views/PortfolioView.vue');
+const ContactsView = () => import('@/views/ContactsView.vue');
+const E404View = () => import('@/views/E404View.vue');
 
 const PUBLIC_PATH = '/my-portfolio/';
 

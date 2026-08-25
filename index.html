@@ -10,6 +10,17 @@
     />
     <title>Портфолио | Fullstack-developer</title>
 
+    <!-- Предзагрузка локальных woff2-шрифтов (ускоряет FCP, избегает FOUT) -->
+    <link rel="preload" href="/src/assets/fonts/latolight.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/src/assets/fonts/latoregular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/src/assets/fonts/latobold.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- preconnect/dns-prefetch для внешних ресурсов (GitHub, Telegram) -->
+    <link rel="preconnect" href="https://github.com" crossorigin />
+    <link rel="dns-prefetch" href="https://github.com" />
+    <link rel="preconnect" href="https://t.me" crossorigin />
+    <link rel="dns-prefetch" href="https://t.me" />
+
     <!-- Open Graph (соцсети) -->
     <meta property="og:title" content="Портфолио | Fullstack-developer" />
     <meta

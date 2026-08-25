@@ -24,7 +24,7 @@ const { tabs } = storeToRefs(usePortfolioStore());
             role="tabpanel"
             :aria-labelledby="`tab-${tab.id}`"
           >
-            <article class="portfolio__item card" v-for="project in tab.content" :key="project.id">
+            <article class="portfolio__item card" v-for="(project, index) in tab.content" :key="project.id">
               <button
                 type="button"
                 class="card__front"
@@ -37,7 +37,17 @@ const { tabs } = storeToRefs(usePortfolioStore());
                 <picture class="card__img">
                   <source :srcset="project.imgMobile" media="(max-width: 767px)" width="290" height="193" />
 
-                  <img :src="project.imgDesktop" :alt="project.title" width="350" height="233" />
+                  <!-- Первая картинка активной вкладки — приоритетная (кандидат LCP),
+                       остальные — ниже первого экрана, грузим лениво -->
+                  <img
+                    :src="project.imgDesktop"
+                    :alt="project.title"
+                    width="350"
+                    height="233"
+                    :loading="tab.isActive && index === 0 ? 'eager' : 'lazy'"
+                    :fetchpriority="tab.isActive && index === 0 ? 'high' : 'auto'"
+                    decoding="async"
+                  />
                 </picture>
               </button>
 
