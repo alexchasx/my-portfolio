@@ -15,18 +15,37 @@ const { tabs } = storeToRefs(usePortfolioStore());
 
       <TabsComponent :tabs="tabs">
         <TransitionGroup name="cards">
-          <div class="portfolio__content" v-show="tab.isActive" v-for="tab in tabs" :key="tab.id">
-            <article class="portfolio__item card" v-for="project in tab.content" :key="project.id"
-              @click="project.isOpen = !project.isOpen">
-              <div class="card__front" :class="{ 'card__front--open': project.isOpen }">
+          <div
+            class="portfolio__content"
+            v-show="tab.isActive"
+            v-for="tab in tabs"
+            :key="tab.id"
+            :id="`panel-${tab.id}`"
+            role="tabpanel"
+            :aria-labelledby="`tab-${tab.id}`"
+          >
+            <article class="portfolio__item card" v-for="project in tab.content" :key="project.id">
+              <button
+                type="button"
+                class="card__front"
+                :class="{ 'card__front--open': project.isOpen }"
+                :aria-expanded="project.isOpen"
+                :aria-controls="`card-body-${project.id}`"
+                :aria-label="`Показать подробности проекта: ${project.title}`"
+                @click="project.isOpen = !project.isOpen"
+              >
                 <picture class="card__img">
                   <source :srcset="project.imgMobile" media="(max-width: 767px)" width="290" height="193" />
 
                   <img :src="project.imgDesktop" :alt="project.title" width="350" height="233" />
                 </picture>
-              </div>
+              </button>
 
-              <div class="card__back" :class="{ 'card__back--open': project.isOpen }">
+              <div
+                class="card__back"
+                :class="{ 'card__back--open': project.isOpen }"
+                :id="`card-body-${project.id}`"
+              >
                 <div class="card__content">
                   <h2 class="card__title">{{ project.title }}</h2>
 
@@ -49,4 +68,17 @@ const { tabs } = storeToRefs(usePortfolioStore());
 <style lang="scss" scoped>
 @import '@/assets/styles/main.scss';
 @import '@/assets/styles/components/portfolio-view.scss';
+
+/* карточка-кнопка: сброс стилей браузерной кнопки */
+.card__front {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
 </style>

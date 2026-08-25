@@ -17,16 +17,16 @@ const { table, frontEndSkills, backEndSkills } = storeToRefs(homeStore);
         Developer
       </p>
 
-      <div class="home__table table">
+      <dl class="home__table table">
         <div
           class="home__text gradient-text table__row"
           v-for="item in table"
           :key="item.col1"
         >
-          <div class="table__col table__col--1" v-html="item.col1"></div>
-          <div class="table__col table__col--2" v-html="item.col2"></div>
+          <dt class="table__col table__col--1" v-html="item.col1"></dt>
+          <dd class="table__col table__col--2" v-html="item.col2"></dd>
         </div>
-      </div>
+      </dl>
     </div>
   </section>
 

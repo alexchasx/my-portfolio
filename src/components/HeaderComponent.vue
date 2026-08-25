@@ -1,7 +1,7 @@
 <script setup>
 import { useCommonStore } from '@/stores/common';
 import { storeToRefs } from 'pinia';
-import { ref } from 'vue';
+import { ref, nextTick } from 'vue';
 
 const TABLET_BREAK_POINT = 768;
 const commonStore = useCommonStore();
@@ -14,10 +14,39 @@ if (isMobileDevice()) {
   isOpenMenu.value = false;
 }
 
+const burgerBtn = ref(null);
+const navEl = ref(null);
+
 function openMenu() {
   if (isMobileDevice()) {
     isOpenMenu.value = !isOpenMenu.value;
   }
+}
+
+function closeMenu() {
+  isOpenMenu.value = false;
+}
+
+async function handleMenuToggle() {
+  const wasOpen = isOpenMenu.value;
+  openMenu();
+
+  if (isMobileDevice()) {
+    if (!wasOpen) {
+      // Меню открылось — переносим фокус на кнопку закрытия
+      await nextTick();
+      navEl.value?.querySelector('.nav__close')?.focus();
+    } else {
+      // Меню закрылось — возвращаем фокус на бургер
+      burgerBtn.value?.focus();
+    }
+  }
+}
+
+function handleMenuClose() {
+  if (!isMobileDevice() || !isOpenMenu.value) return;
+  closeMenu();
+  burgerBtn.value?.focus();
 }
 </script>
 
@@ -26,10 +55,14 @@ function openMenu() {
     <div class="container header__container">
       <div class="burger-wrap">
         <button
+          ref="burgerBtn"
           class="btn-reset burger"
           :class="{ 'open-menu': isOpenMenu }"
-          aria-label="Открыть меню"
-          @click="openMenu"
+          type="button"
+          aria-label="Меню"
+          :aria-expanded="isOpenMenu"
+          aria-controls="main-menu"
+          @click="handleMenuToggle"
         >
           <span
             class="burger__line"
@@ -40,20 +73,23 @@ function openMenu() {
 
       <transition name="fade" mode="out-in">
         <nav
+          ref="navEl"
+          id="main-menu"
           class="nav"
-          title="Главное меню"
+          aria-label="Главное меню"
           v-if="isOpenMenu"
-          @click="openMenu"
+          @keydown.esc="handleMenuClose"
         >
           <button
             class="btn-reset nav__close"
+            type="button"
             aria-label="Закрыть меню"
+            @click="handleMenuClose"
           ></button>
 
-          <ul class="list-reset nav__list">
+          <ul class="list-reset nav__list" @click="handleMenuClose">
             <li class="nav__item" v-for="item in menu" :key="item.route">
               <router-link
-                href="#"
                 class="nav__link gradient-text uppercase link"
                 :to="{ name: item.route }"
               >

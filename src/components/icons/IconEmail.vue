@@ -4,7 +4,7 @@ const { href, title } = defineProps({ href: String, title: String });
 
 <template>
   <div class="svg-container">
-    <a target="_blank" :href="href" class="icon-link"
+    <a target="_blank" rel="noopener noreferrer" :href="href" :aria-label="title" class="icon-link"
       ><svg
         version="1.0"
         xmlns="http://www.w3.org/2000/svg"

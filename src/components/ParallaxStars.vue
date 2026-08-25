@@ -11,14 +11,17 @@ const toggleStars = commonStore.toggleStars;
 <template>
   <div class="parallax-stars">
     <template v-if="!isDisabledStars">
-      <div class="stars stars-small"></div>
-      <div class="stars stars-medium"></div>
-      <div class="stars stars-big"></div>
+      <div class="stars stars-small" aria-hidden="true"></div>
+      <div class="stars stars-medium" aria-hidden="true"></div>
+      <div class="stars stars-big" aria-hidden="true"></div>
     </template>
 
     <button
+      type="button"
       class="btn-reset btn stars-toggle-btn"
       :class="{ 'btn-active': isDisabledStars }"
+      aria-label="Выключить фоновые звёзды"
+      :aria-pressed="isDisabledStars"
       @click="toggleStars"
     >
       <IconStarOff />

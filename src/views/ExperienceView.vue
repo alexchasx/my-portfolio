@@ -27,12 +27,20 @@ function toggleWork(work) {
           <li class="work" v-for="work in works" :key="work.id">
             <div class="timeline-dot" :class="work.type + '-icon'"></div>
 
-            <time
+            <button
+              type="button"
               class="work__time-interval gradient-text"
-              @click.self="toggleWork(work)"
-              >{{ work.timeInterval }}</time
+              :aria-expanded="work.isOpen"
+              :aria-controls="'work-content-' + work.id"
+              @click="toggleWork(work)"
             >
-            <div class="work__content" :class="{ open: work.isOpen }">
+              <time>{{ work.timeInterval }}</time>
+            </button>
+            <div
+              class="work__content"
+              :class="{ open: work.isOpen }"
+              :id="'work-content-' + work.id"
+            >
               <h2 class="work__title">
                 <span class="work__position">{{ work.position }}</span>
                 <a
@@ -55,4 +63,9 @@ function toggleWork(work) {
 <style lang="scss" scoped>
 @import '@/assets/styles/main.scss';
 @import '@/assets/styles/components/experience-view.scss';
+
+button {
+  text-align: left;
+  border: none;
+}
 </style>

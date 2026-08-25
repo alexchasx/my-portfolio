@@ -5,11 +5,13 @@ import ParallaxStars from '@/components/ParallaxStars.vue';
 
 <template>
   <div class="site-container">
+    <a class="skip-link" href="#main">Перейти к содержимому</a>
+
     <parallax-stars />
 
     <header-component />
 
-    <main>
+    <main id="main" tabindex="-1">
       <router-view v-slot="{ Component, route }">
         <transition name="fade" mode="out-in">
           <div :key="route.name">
@@ -18,6 +20,12 @@ import ParallaxStars from '@/components/ParallaxStars.vue';
         </transition>
       </router-view>
     </main>
+
+    <footer class="footer">
+      <div class="container footer__container">
+        <span class="copyright">© 2023 - {{ new Date().getFullYear() }} Александр Часовников</span>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -28,6 +36,17 @@ import ParallaxStars from '@/components/ParallaxStars.vue';
 
 .fade-leave-active {
   animation: fadeOut 0.4s;
+}
+
+.footer {
+  margin-top: auto;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.copyright {
+  font-size: 16px;
+  color: #fff;
 }
 
 @keyframes fadeIn {

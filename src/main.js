@@ -23,6 +23,15 @@ function setMetaDescription(content) {
 router.afterEach((to) => {
   document.title = to.meta.title || DEFAULT_TITLE;
   setMetaDescription(to.meta.description || DEFAULT_DESCRIPTION);
+
+  // Доступность: переносим фокус на контент при навигации,
+  // чтобы скринридер сообщал о смене страницы.
+  requestAnimationFrame(() => {
+    const main = document.querySelector('#main');
+    if (main && to.name !== undefined) {
+      main.focus({ preventScroll: true });
+    }
+  });
 });
 
 const app = createApp(App);
