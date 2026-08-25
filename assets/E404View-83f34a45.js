@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as o}from"./index-4ade5b9e.js";const c={},r={class:"section-title portfolio__title typewriter"};function s(_,n){return t(),o("h1",r,"Страница не найдена")}const a=e(c,[["render",s]]);export{a as default};
