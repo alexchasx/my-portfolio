@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "prerender": "node prerender.js",
+    "postbuild": "node prerender.js",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -14,7 +16,14 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
+    "puppeteer": "^25.9.0",
     "sass": "^1.65.1",
-    "vite": "^4.4.6"
+    "vite": "^4.4.6",
+    "vite-plugin-prerender": "^1.0.8"
+  },
+  "overrides": {
+    "@prerenderer/renderer-puppeteer": {
+      "puppeteer": "^25.9.0"
+    }
   }
 }
