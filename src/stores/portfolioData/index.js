@@ -24,7 +24,7 @@ export const portfolioProjects = [
 export const portfolioTabs = [
   {
     id: PHP,
-    isActive: false,
+    isActive: true, // по умолчанию активная вкладка
     title: 'PHP',
     icon: markRaw(IconPHP),
     content: null,
@@ -45,7 +45,7 @@ export const portfolioTabs = [
   },
   {
     id: WEB_LAYOUTS,
-    isActive: true,
+    isActive: false,
     title: 'Вёрстка',
     icon: markRaw(IconHTML5),
     content: null,

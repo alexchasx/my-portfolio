@@ -110,7 +110,7 @@ export const useExperienceStore = defineStore('experience', () => {
             elcomspb.ru
           </a>.
           <br>
-        Используемые технологии: PHP, Laravel, OpenCart, MySQL, PostgreSQL, Docker, VueJS2, JavaScript, HTML, CSS, REST API, Redis
+        Технологии: PHP, Laravel, OpenCart, MySQL, PostgreSQL, VueJS2, JavaScript, HTML, CSS
         `,
       },
     ].reverse()
