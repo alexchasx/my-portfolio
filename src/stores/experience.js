@@ -33,8 +33,8 @@ export const useExperienceStore = defineStore('experience', () => {
             target="_blank"
             href="https://www.teamkraft.net">
             Teamkraft
-          </a> на базе фреймворка Laravel.
-          Используемые технологии: PHP, Laravel, PostgreSQL, Swagger, REST API, Eloquent
+          </a>.
+          Тех. стек: PHP, Laravel, PostgreSQL, Swagger, REST API, Eloquent
           `,
       },
       {
@@ -73,7 +73,7 @@ export const useExperienceStore = defineStore('experience', () => {
             sonnen.me/
           </a> и другие.
           <br>
-        Используемые технологии: PHP, Laravel, 1C-Битрикс, MySQL, SQL, JavaScript, jQuery, HTML, CSS, unit-тесты`,
+        Тех. стек: PHP, Laravel, 1C-Битрикс, MySQL, SQL, JavaScript, jQuery, HTML, CSS, unit-тесты`,
       },
       {
         id: 4,
@@ -84,6 +84,7 @@ export const useExperienceStore = defineStore('experience', () => {
         company: ' в "Skillbox"',
         companyLink: 'https://skillbox.ru/',
         description: `Прохождение курса "Frontend-разработчик".
+          <br>Тех. стек: VueJS 2/3, JavaScript, HTML, CSS, SCSS, Jest, Cypress
           <br>
           <br>
           <a class="btn-reset btn download-link"
@@ -110,7 +111,7 @@ export const useExperienceStore = defineStore('experience', () => {
             elcomspb.ru
           </a>.
           <br>
-        Технологии: PHP, Laravel, OpenCart, MySQL, PostgreSQL, VueJS2, JavaScript, HTML, CSS
+        Тех. стек: PHP, Laravel, OpenCart, MySQL, PostgreSQL, VueJS2, JavaScript, HTML, CSS
         `,
       },
     ].reverse()
