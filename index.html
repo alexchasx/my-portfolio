@@ -4,11 +4,20 @@
     <meta charset="UTF-8" />
     <link rel="icon" href="/my-portfolio/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b1d33" />
+
+    <!-- Основные SEO-метатеги -->
+    <title>Портфолио | Fullstack-developer</title>
     <meta
       name="description"
       content="Портфолио Fullstack-разработчика - Вёрстка | JavaScript | VueJS | PHP | Laravel"
     />
-    <title>Портфолио | Fullstack-developer</title>
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Александр Часовников" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <!-- Канонический URL (защита от дублей, задаёт основной адрес страницы) -->
+    <link rel="canonical" href="https://alexchasx.github.io/my-portfolio/" />
 
     <!-- Предзагрузка локальных woff2-шрифтов (ускоряет FCP, избегает FOUT) -->
     <link rel="preload" href="/src/assets/fonts/latolight.woff2" as="font" type="font/woff2" crossorigin />
@@ -22,6 +31,7 @@
     <link rel="dns-prefetch" href="https://t.me" />
 
     <!-- Open Graph (соцсети) -->
+    <meta property="og:site_name" content="Портфолио | Fullstack-developer" />
     <meta property="og:title" content="Портфолио | Fullstack-developer" />
     <meta
       property="og:description"
@@ -29,7 +39,10 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://alexchasx.github.io/my-portfolio/" />
-    <meta property="og:image" content="/my-portfolio/og-preview.webp" />
+    <meta property="og:image" content="https://alexchasx.github.io/my-portfolio/og-preview.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Портфолио Fullstack-разработчика Александра Часовникова" />
     <meta property="og:locale" content="ru_RU" />
 
     <!-- Twitter Card -->
@@ -39,7 +52,9 @@
       name="twitter:description"
       content="Портфолио Fullstack-разработчика - Вёрстка | JavaScript | VueJS | PHP | Laravel"
     />
-    <meta name="twitter:image" content="/my-portfolio/og-preview.webp" />
+    <meta name="twitter:image" content="https://alexchasx.github.io/my-portfolio/og-preview.webp" />
+    <meta name="twitter:site" content="@alexchasx" />
+    <meta name="twitter:creator" content="@alexchasx" />
 
     <!-- Structured data (JSON-LD) для rich-результатов -->
     <script type="application/ld+json">

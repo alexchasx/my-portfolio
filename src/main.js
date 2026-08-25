@@ -5,24 +5,26 @@ import { createPinia } from 'pinia';
 
 import App from './App.vue';
 import router from './router';
+import { applySeoMeta } from './utils/seo';
+import { initAnalytics, trackPageView } from './utils/analytics';
 
 const DEFAULT_TITLE = 'Портфолио | Fullstack-developer';
 const DEFAULT_DESCRIPTION =
   'Портфолио Fullstack-разработчика - VueJS | Laravel';
 
-function setMetaDescription(content) {
-  let description = document.querySelector('meta[name="description"]');
-  if (!description) {
-    description = document.createElement('meta');
-    description.name = 'description';
-    document.head.appendChild(description);
-  }
-  description.setAttribute('content', content);
-}
+// Применяем SEO-метаданные на старте (для пре-рендера и первого рендера SPA)
+applySeoMeta(
+  router.resolve(router.currentRoute.value),
+  DEFAULT_TITLE,
+  DEFAULT_DESCRIPTION
+);
 
 router.afterEach((to) => {
-  document.title = to.meta.title || DEFAULT_TITLE;
-  setMetaDescription(to.meta.description || DEFAULT_DESCRIPTION);
+  // SEO: title, description, canonical, Open Graph
+  applySeoMeta(to, DEFAULT_TITLE, DEFAULT_DESCRIPTION);
+
+  // Аналитика: отправляем просмотр страницы
+  trackPageView(to);
 
   // Доступность: переносим фокус на контент при навигации,
   // чтобы скринридер сообщал о смене страницы.
@@ -38,5 +40,7 @@ const app = createApp(App);
 
 app.use(createPinia());
 app.use(router);
+
+initAnalytics();
 
 app.mount('#app');
