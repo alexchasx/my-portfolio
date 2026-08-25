@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Страница не найдена (404) | Портфолио Fullstack-разработчика</title>
+    <script>
+      // GitHub Pages отдаёт этот файл с кодом 404 для любых битых URL.
+      // Перенаправляем посетителя на главную страницу портфолио (SPA).
+      var base = '/my-portfolio/';
+      var redirect = base || './';
+      window.location.replace(redirect);
+    </script>
+  </head>
+  <body>
+    <p>
+      Страница не найдена.
+      <a href="/my-portfolio/">Перейти на главную страницу портфолио</a>.
+    </p>
+  </body>
+</html>
