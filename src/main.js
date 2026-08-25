@@ -6,6 +6,25 @@ import { createPinia } from 'pinia';
 import App from './App.vue';
 import router from './router';
 
+const DEFAULT_TITLE = 'Портфолио | Fullstack-developer';
+const DEFAULT_DESCRIPTION =
+  'Портфолио Fullstack-разработчика - VueJS | Laravel';
+
+function setMetaDescription(content) {
+  let description = document.querySelector('meta[name="description"]');
+  if (!description) {
+    description = document.createElement('meta');
+    description.name = 'description';
+    document.head.appendChild(description);
+  }
+  description.setAttribute('content', content);
+}
+
+router.afterEach((to) => {
+  document.title = to.meta.title || DEFAULT_TITLE;
+  setMetaDescription(to.meta.description || DEFAULT_DESCRIPTION);
+});
+
 const app = createApp(App);
 
 app.use(createPinia());

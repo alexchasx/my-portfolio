@@ -27,7 +27,7 @@ npm install @unhead/vue
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "...",
-  "jobTitle": "Frontend/Fullstack Developer",
+  "jobTitle": "Fullstack Developer",
   "url": "https://alexchasx.github.io/my-portfolio/",
   "sameAs": ["https://github.com/alexchasx", "telegram-url"]
 }
