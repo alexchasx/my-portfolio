@@ -1,11 +1,38 @@
 <script setup>
+import { onMounted } from 'vue';
+import { storeToRefs } from 'pinia';
+
 import IconLink from '@/components/icons/IconLink.vue';
 import IconGitHub from '@/components/icons/IconGitHub.vue';
 import { usePortfolioStore } from '@/stores/portfolio';
-import { storeToRefs } from 'pinia';
+import { upsertJsonLd } from '@/utils/jsonld';
+import { BASE_URL } from '@/utils/seo-data';
 import TabsComponent from '@/components/TabsComponent.vue';
 
-const { tabs } = storeToRefs(usePortfolioStore());
+const portfolioStore = usePortfolioStore();
+const { tabs } = storeToRefs(portfolioStore);
+
+// Structured data: перечень проектов (ItemList) для rich-результатов.
+// Инъекция попадает и в пре-рендеренный HTML, т.к. prerender захватывает DOM.
+onMounted(() => {
+  const projects = tabs.value.flatMap((tab) => tab.content || []);
+  upsertJsonLd('portfolio-itemlist-jsonld', {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Проекты Fullstack-разработчика',
+    numberOfItems: projects.length,
+    itemListElement: projects.map((project, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: project.title,
+      url: project.link || project.github || `${BASE_URL}/portfolio`,
+      image: project.imgDesktop || undefined,
+      description: project.description
+        ? String(project.description).replace(/<[^>]+>/g, '')
+        : undefined,
+    })),
+  });
+});
 </script>
 
 <template>

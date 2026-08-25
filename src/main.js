@@ -6,11 +6,8 @@ import { createPinia } from 'pinia';
 import App from './App.vue';
 import router from './router';
 import { applySeoMeta } from './utils/seo';
+import { DEFAULT_TITLE, DEFAULT_DESCRIPTION } from './utils/seo-data';
 import { initAnalytics, trackPageView } from './utils/analytics';
-
-const DEFAULT_TITLE = 'Портфолио | Fullstack-developer';
-const DEFAULT_DESCRIPTION =
-  'Портфолио Fullstack-разработчика - VueJS | Laravel';
 
 // Применяем SEO-метаданные на старте (для пре-рендера и первого рендера SPA)
 applySeoMeta(

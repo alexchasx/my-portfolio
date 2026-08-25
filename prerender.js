@@ -25,6 +25,15 @@ const PORT = 4173;
 // Маршруты приложения (см. src/router/index.js)
 const ROUTES = ['/', '/experience', '/portfolio', '/contacts'];
 
+// Приоритеты страниц для sitemap
+const SITEMAP_PRIORITY = {
+  '/': '1.0',
+  '/portfolio': '0.9',
+  '/experience': '0.8',
+  '/contacts': '0.7',
+};
+const SITE_BASE = 'https://alexchasx.github.io/my-portfolio';
+
 const MIME_TYPES = {
   '.html': 'text/html; charset=utf-8',
   '.js': 'text/javascript; charset=utf-8',
@@ -172,6 +181,28 @@ async function renderPage(browser, route) {
   return errors.length ? 1 : 0;
 }
 
+/**
+ * Генерирует sitemap.xml в dist с актуальной датой последнего изменения.
+ */
+function writeSitemap() {
+  const today = new Date().toISOString().slice(0, 10);
+  const urls = ROUTES.map((route) => {
+    const loc =
+      route === '/' ? `${SITE_BASE}/` : `${SITE_BASE}${route.replace(/\/+$/, '')}/`;
+    return `  <url>
+    <loc>${loc}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>${SITEMAP_PRIORITY[route] || '0.5'}</priority>
+  </url>`;
+  }).join('\n');
+
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
+  const outFile = path.join(DIST, 'sitemap.xml');
+  fs.writeFileSync(outFile, xml, 'utf8');
+  console.log(`[ok] sitemap          -> ${path.relative(ROOT, outFile)} (lastmod=${today})`);
+}
+
 async function main() {
   if (!fs.existsSync(DIST)) {
     console.error('Папка ' + DIST + ' не найдена. Сначала выполните `npm run build`.');
@@ -191,6 +222,8 @@ async function main() {
     for (const route of ROUTES) {
       failed += await renderPage(browser, route);
     }
+    // Генерируем sitemap.xml с актуальными датами после рендера всех страниц
+    writeSitemap();
   } finally {
     await browser.close();
     server.close();

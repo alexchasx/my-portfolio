@@ -3,6 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="/my-portfolio/favicon.ico" />
+    <!-- Favicon-набор и PWA -->
+    <link rel="apple-touch-icon" href="/my-portfolio/og-preview.webp" />
+    <link rel="manifest" href="/my-portfolio/site.webmanifest" />
+    <meta name="application-name" content="Портфолио | Fullstack-developer" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0b1d33" />
 
@@ -73,6 +80,23 @@
           "addressRegion": "Белгородская область",
           "addressCountry": "RU"
         },
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "Skillbox"
+        },
+        "knowsAbout": [
+          "HTML",
+          "CSS",
+          "SCSS",
+          "JavaScript",
+          "Vue.js",
+          "PHP",
+          "Laravel",
+          "PostgreSQL",
+          "MySQL",
+          "REST API",
+          "Адаптивная вёрстка"
+        ],
         "sameAs": ["https://github.com/alexchasx", "https://t.me/a_chasovnikov"]
       }
     </script>
@@ -87,6 +111,29 @@
         "publisher": {
           "@id": "https://alexchasx.github.io/my-portfolio/#person"
         }
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Александр Часовников — Fullstack-разработчик",
+        "description": "Разработка и доработка веб-приложений: вёрстка, JavaScript, VueJS, PHP, Laravel. Fullstack-разработка на заказ.",
+        "url": "https://alexchasx.github.io/my-portfolio/",
+        "image": "https://alexchasx.github.io/my-portfolio/og-preview.webp",
+        "email": "a.s.chasovnikov@yandex.ru",
+        "priceRange": "₽₽",
+        "areaServed": { "@type": "Country", "name": "Россия" },
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "Белгородская область",
+          "addressCountry": "RU"
+        },
+        "founder": {
+          "@id": "https://alexchasx.github.io/my-portfolio/#person"
+        },
+        "sameAs": ["https://github.com/alexchasx", "https://t.me/a_chasovnikov"]
       }
     </script>
   </head>

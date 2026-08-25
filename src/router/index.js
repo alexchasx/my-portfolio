@@ -3,6 +3,8 @@ import {
   createWebHistory,
 } from 'vue-router';
 
+import { routesMeta } from '@/utils/seo-data';
+
 // Ленивая загрузка представлений — code-splitting по маршрутам
 const HomeView = () => import('@/views/HomeView.vue');
 const ExperienceView = () => import('@/views/ExperienceView.vue');
@@ -12,6 +14,12 @@ const E404View = () => import('@/views/E404View.vue');
 
 const PUBLIC_PATH = '/my-portfolio/';
 
+const E404_META = {
+  title: 'Страница не найдена (404) | Александр Часовников',
+  description:
+    'Запрашиваемая страница не найдена. Перейдите на главную страницу портфолио Fullstack-разработчика.',
+};
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -19,50 +27,30 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
-      meta: {
-        title: 'Портфолио Fullstack-разработчика | Александр Часовников',
-        description:
-          'Личное портфолио Fullstack-разработчика. Вёрстка, JavaScript, VueJS, Laravel, PHP. Примеры проектов, опыт и контакты.',
-      },
+      meta: { ...routesMeta['/'] },
     },
     {
       path: '/experience',
       name: 'experience',
       component: ExperienceView,
-      meta: {
-        title: 'Опыт и навыки | Александр Часовников',
-        description:
-          'Опыт работы и профессиональные навыки Fullstack-разработчика: HTML, CSS, JavaScript, VueJS, PHP, Laravel, PostgreSQL, MySQL.',
-      },
+      meta: { ...routesMeta['/experience'] },
     },
     {
       path: '/portfolio',
       name: 'portfolio',
       component: PortfolioView,
-      meta: {
-        title: 'Портфолио проектов | Александр Часовников',
-        description:
-          'Примеры реализованных проектов: адаптивная вёрстка, JavaScript-приложения, проекты на VueJS, Laravel и PHP. Реализованные кейсы разработчика.',
-      },
+      meta: { ...routesMeta['/portfolio'] },
     },
     {
       path: '/contacts',
       name: 'contacts',
       component: ContactsView,
-      meta: {
-        title: 'Контакты | Александр Часовников',
-        description:
-          'Связаться с Fullstack-разработчиком Александром Часовниковым: email, Telegram, GitHub и другие контакты для сотрудничества.',
-      },
+      meta: { ...routesMeta['/contacts'] },
     },
     {
       path: '/:any(.*)',
       component: E404View,
-      meta: {
-        title: 'Страница не найдена (404) | Александр Часовников',
-        description:
-          'Запрашиваемая страница не найдена. Перейдите на главную страницу портфолио Fullstack-разработчика.',
-      },
+      meta: { ...E404_META },
     },
   ],
 });
