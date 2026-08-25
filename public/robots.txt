@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alexchasx.github.io/my-portfolio/sitemap.xml
