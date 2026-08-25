@@ -6,6 +6,10 @@ import myPortfolio350 from '@/assets/images/my-portfolio350.webp';
 import myPortfolio290 from '@/assets/images/my-portfolio290.webp';
 import todos350 from '@/assets/images/todos-350.webp';
 import todos290 from '@/assets/images/todos-290.webp';
+import elcomspb350webp from '@/assets/images/elcomspb350.webp';
+import elcomspb290webp from '@/assets/images/elcomspb290.webp';
+import elcom_portal350webp from '@/assets/images/elcom_portal350.webp';
+import elcom_portal290webp from '@/assets/images/elcom_portal290.webp';
 
 import {
   DEFAULT_IS_OPEN,
@@ -61,5 +65,27 @@ export const vueProjects = [
           "Frontend-разработчик" от ${SKILLBOX_LINK}. Описание в README.md`,
     link: GITHUB_PAGES_LINK + 'vue-3_shop-moire/#/',
     github: MY_GITHUB + 'vue-3_shop-moire',
+  },
+  {
+    id: VUE_JS + 5,
+    isOpen: DEFAULT_IS_OPEN,
+    tabId: VUE_JS,
+    imgDesktop: elcomspb350webp,
+    imgMobile: elcomspb290webp,
+    title: 'elcomspb.ru',
+    description: `Действующий интернет-магазин компании ЭЛКОМ. Участвовал в доработке бекенда и фронтенда`,
+    link: 'https://www.elcomspb.ru/',
+    github: null,
+  },
+  {
+    id: VUE_JS + 6,
+    isOpen: DEFAULT_IS_OPEN,
+    tabId: VUE_JS,
+    imgDesktop: elcom_portal350webp,
+    imgMobile: elcom_portal290webp,
+    title: 'portal.elcomspb.ru',
+    description: `Внутренний портал компании ЭЛКОМ. Участвовал в доработке бекенда и фронтенда`,
+    link: 'https://portal.elcomspb.ru/#/',
+    github: null,
   },
 ];
